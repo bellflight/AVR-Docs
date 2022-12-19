@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "autoprefixer": "^10.4.13",
+    "cheerio": "^1.0.0-rc.12",
+    "docsy": "github:google/docsy#v0.5.1",
+    "glob": "^8.0.3",
+    "hugo-extended": "^0.107.0",
+    "postcss": "^8.4.19",
+    "postcss-cli": "^10.0.0",
+    "sync-request": "^6.1.0",
+    "toml": "^3.0.0"
+  },
+  "devDependencies": {
+    "markdownlint-cli": "^0.32.2",
+    "npm-check-updates": "^16.4.3",
+    "open": "^8.4.0",
+    "prettier": "^2.8.0"
+  },
+  "scripts": {
+    "build": "hugo --cleanDestinationDir --verbose && node postprocess.js",
+    "format": "prettier --write content/",
+    "format:check": "prettier --check content/",
+    "lint": "markdownlint content/",
+    "server": "node -e \"const open = require('open'); open('http://localhost:1313');\" && hugo server -p 1313",
+    "update": "ncu --upgrade && npm install"
+  }
+}

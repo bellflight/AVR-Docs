@@ -1,0 +1,19 @@
+<!-- Makes URL absolute if not -->
+{{ $image_url := "" }}
+{{ if or ( hasPrefix .Destination "/" ) ( hasPrefix .Destination "http" ) }}
+    {{ $image_url = .Destination | safeURL }}
+{{ else }}
+    <!-- Hugo lower-cases page slugs. Modify file path to match. -->
+    {{ $image_url = printf "%s%s%s" ("/") (lower (replace .Page.File.Dir "\\" "/")) (.Destination | safeURL) }}
+{{ end }}
+
+<!-- If the site base URL is not blank or a single slash, prefix that -->
+{{ if and (ne site.BaseURL "/") (ne site.BaseURL "") }}
+    {{ $image_url = printf "%s%s" (site.BaseURL) ($image_url) }}
+{{ end }}
+
+<img loading="lazy" class="glightbox" src="{{ $image_url }}" alt="{{ .Text }}">
+{{ if .Text }}
+<!-- Allow markdown in the subtitle -->
+<p class="glightbox-subtitle">{{ safeHTML .Text }}</p>
+{{ end }}

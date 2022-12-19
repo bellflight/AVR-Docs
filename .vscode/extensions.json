@@ -1,0 +1,13 @@
+{
+    "recommendations": [
+        "jack89ita.copy-filename",
+        "kisstkondoros.vscode-gutter-preview",
+        "Tyriar.luna-paint",
+        "DavidAnson.vscode-markdownlint",
+        "esbenp.prettier-vscode",
+        "tamasfe.even-better-toml",
+        "mushan.vscode-paste-image",
+        "kaellarkin.hugo-shortcode-syntax",
+        "streetsidesoftware.code-spell-checker"
+    ]
+}
