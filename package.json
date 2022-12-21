@@ -2,19 +2,20 @@
   "dependencies": {
     "autoprefixer": "^10.4.13",
     "cheerio": "^1.0.0-rc.12",
-    "docsy": "github:google/docsy#v0.5.1",
+    "cspell": "^6.18.0",
+    "docsy": "github:google/docsy#v0.6.0",
     "glob": "^8.0.3",
-    "hugo-extended": "^0.107.0",
-    "postcss": "^8.4.19",
-    "postcss-cli": "^10.0.0",
+    "hugo-extended": "^0.108.0",
+    "postcss": "^8.4.20",
+    "postcss-cli": "^10.1.0",
     "sync-request": "^6.1.0",
     "toml": "^3.0.0"
   },
   "devDependencies": {
     "markdownlint-cli": "^0.32.2",
-    "npm-check-updates": "^16.4.3",
+    "npm-check-updates": "^16.6.2",
     "open": "^8.4.0",
-    "prettier": "^2.8.0"
+    "prettier": "^2.8.1"
   },
   "scripts": {
     "build": "hugo --cleanDestinationDir --verbose && node postprocess.js",
@@ -22,6 +23,7 @@
     "format:check": "prettier --check content/",
     "lint": "markdownlint content/",
     "server": "node -e \"const open = require('open'); open('http://localhost:1313');\" && hugo server -p 1313",
-    "update": "ncu --upgrade && npm install"
+    "update": "ncu --upgrade && npm install",
+    "spellcheck": "cspell content/**/*.md"
   }
 }

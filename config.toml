@@ -56,10 +56,10 @@ pygmentsStyle = "monokai"
 
     # A link to latest version of the docs. Used in the "version-banner" partial to
     # point people to the main doc site.
-    url_latest_version = "https://bellflight.github.io/AVR-2022"
+    url_latest_version = "https://bellflight.github.io/AVR-Docs"
 
     # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
-    github_repo = "https://github.com/bellflight/AVR-2022"
+    github_repo = "https://github.com/bellflight/AVR-Docs"
     # Discourse base URL
     discourse_forums          = "https://www.bellavrforum.org"
     # Discourse category to pre-assign to issues
@@ -119,11 +119,11 @@ pygmentsStyle = "monokai"
     url  = "https://textron.taleo.net/careersection/bell/jobsearch.ftl?lang=en"
     icon = "fa fa-briefcase"
 
-[[menu.main]]
-    name   = "GitHub"
-    weight = 50
-    pre    = "<i class='fab fa-github'></i>"
-    url    = "https://github.com/bellflight/AVR-2022/"
+# [[menu.main]]
+#     name   = "GitHub"
+#     weight = 50
+#     pre    = "<i class='fab fa-github'></i>"
+#     url    = "https://github.com/bellflight/AVR-Docs/"
 
 [[menu.main]]
     name   = "Forums"

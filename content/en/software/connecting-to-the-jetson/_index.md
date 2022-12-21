@@ -153,7 +153,7 @@ ssh <user>@<ip>
 ```
 
 The first time you log in to your Jetson, you'll be prompted to accept
-the host's key. Enter `yes`. You'll thenbe prompted for your password,
+the host's key. Enter `yes`. You'll then be prompted for your password,
 and then you'll be put into a terminal.
 
 ![Command line SSH login](ssh-avr.png)

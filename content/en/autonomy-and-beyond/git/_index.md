@@ -20,9 +20,11 @@ Git is already installed on your Jetson.
 Git needs to know who you are.
 To set up a username and email address, open a terminal and type the following:
 
+<!-- cSpell:disable -->
 ```bash
 git config --global user.name "yourusername"
 git config --global user.email "email@youremail.com"
 ```
+<!-- cSpell:enable -->
 
 Remember this email, because you will need to add it to your GitHub account later.

@@ -85,7 +85,7 @@ Now, you can hit the "Write" button!
 You can also optionally click the "Verify" button as well just to make sure
 everything flashed correctly.
 
-![Verificiation complete](2022-05-12-07-36-32.png)
+![Verification complete](2022-05-12-07-36-32.png)
 
 Finally, to get the PCC out of bootloader mode, and make sure the firmware is working
 correctly, unplug the PCC and plug it back in, or press the reset button once.

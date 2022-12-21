@@ -7,6 +7,6 @@ weight: 1
 
 VS Code can be downloaded and installed from the following Link: [VS Code Install](https://code.visualstudio.com/download)
 
-Once VS Code is intalled, take some time to familiarize yourself with the user interface. An intro to the layout and basic feature of VS Code can be found [here](https://code.visualstudio.com/docs/getstarted/userinterface).
+Once VS Code is installed, take some time to familiarize yourself with the user interface. An intro to the layout and basic feature of VS Code can be found [here](https://code.visualstudio.com/docs/getstarted/userinterface).
 
 In the next step, we will get Python installed and test example scripts on your machine.

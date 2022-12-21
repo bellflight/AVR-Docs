@@ -67,7 +67,7 @@ When asked about resizing the partition, leave the default.
 ![](2022-06-18-16-21-18.png)
 
 Setting up a network connection is not needed at this time. To bypass this, select
-"dummy0" and let the autoconfiguration fail.
+"dummy0" and let the auto-configuration fail.
 
 ![](2022-06-18-16-22-14.png)
 

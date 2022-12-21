@@ -37,7 +37,7 @@ Slide the wire all the way out and get rid of the plastic connector.
 Slide the wire into the servo connector housing as shown in the photo below. Servo connectors can be found in a small envelope of miscellaneous parts in your kit. Refer back to the first photo in this section to see it.
 
 {{% alert title="Note" color="note" %}}
-Make sure that you listen for a click sound when sliding the wire into the servo connetor. Pay attention to the orientation of the wire in the photo below. When the wire is secure you can lightly pull on it and it will not come out.
+Make sure that you listen for a click sound when sliding the wire into the servo connector. Pay attention to the orientation of the wire in the photo below. When the wire is secure you can lightly pull on it and it will not come out.
 {{% /alert %}}
 
 ![Sliding wire into servo connector](fc_wiring_5.jpg)
@@ -92,7 +92,9 @@ The ESC leads are very thin. We have found it easiest to pinch with your fingern
 
 Match up the wire color on the FC side with the same color on the ESC side. Twist the wires together using the "Twisted Helix" method described in the video below.
 
+<!-- cspell:disable -->
 {{< youtube 2PrJmyux_Us >}}
+<!-- cspell:enable -->
 
 {{% alert title="Warning" color="warning" %}}
 Don't forget to add heat shrink tubing before twisting your wires together! The heat shrink will be necessary to keep the connections from shorting after you solder.

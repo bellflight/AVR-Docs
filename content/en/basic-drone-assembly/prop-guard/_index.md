@@ -85,4 +85,4 @@ Teams may choose from the list of solutions below, but are also encouraged to th
     Loosening can be prevented by using a non-loctite thread locker applied to Nylon nuts and bolts. (See previous note about loctite being caustic to poly carbonate.)
 - Counterbore prop guard motor arm mounting holes to accommodate shorter length Aluminum fasteners included in your kit.
   - Pros: Does not require purchase of any additional supplies.
-  - Cons: Run the risk of ruining prop guard components if done improperly, it is aesy. If this approach is attempted, a drill press and appropriately sized end mill are suggested to perform this operation.
+  - Cons: Run the risk of ruining prop guard components if done improperly, it is easy. If this approach is attempted, a drill press and appropriately sized end mill are suggested to perform this operation.

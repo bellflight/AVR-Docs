@@ -142,7 +142,7 @@ a payload of:
 This message can be used to tell you drone what buildings are on fire and if you want to
 drop water on it or not. For a full list of which buildings have water drops please
 refer to the game manual. The activity of using the `avr/autonomous/building/drop`
-will be implemented by the students in the sadbox module.
+will be implemented by the students in the sandbox module.
 [Hint: the above example can also be used in this scenario]
 
 ### Thermal View/Control
@@ -174,8 +174,8 @@ that are passing through the AVR software, along with giving
 you the ability to manually send messages.
 
 In the top half of the tab is the message viewer. On the left side
-is a tree view of all the topics with the levels deonting "/"s in the topic name.
-When you click on a topic, on the right side will show the last payload recieved
+is a tree view of all the topics with the levels denoting "/"s in the topic name.
+When you click on a topic, on the right side will show the last payload received
 on that topic, and will update live.
 
 ![Viewing live data from a topic](2022-06-18-13-04-42.png)
@@ -204,7 +204,7 @@ in the message viewer.
 {{% alert title="Danger" color="danger" %}}
 Send MQTT messages at your own risk! This is a debugging tool,
 and incorrectly formatted messages, or messages with bogus data
-may cause the flight software to crash, digitially and/or physically.
+may cause the flight software to crash, digitally and/or physically.
 {{% /alert %}}
 
 If you want to copy an existing message, right-click on an item in the message
@@ -259,6 +259,7 @@ You can do a lot of things with this data. For example,
 you can plot how your drone flew through 3D space using
 `matplotlib` and `pandas`:
 
+<!-- cSpell:disable -->
 ```python
 import json
 
@@ -284,11 +285,13 @@ ax.set_zlabel("Altitude")
 plt.legend()
 plt.show()
 ```
+<!-- cSpell:enable -->
 
 ![Using `matplotlib` to plot a drone's flight](2022-06-17-11-31-33.png)
 
 Another example is plotting the drone's battery remaining over time:
 
+<!-- cSpell:disable -->
 ```python
 import csv
 import datetime
@@ -326,6 +329,7 @@ plt.grid(True)
 
 plt.show()
 ```
+<!-- cSpell:enable -->
 
 ![Using `matplotlib` to plot battery percentage](2022-06-18-13-46-34.png)
 

@@ -1,24 +1,30 @@
-# Documentation
+# AVR-Docs
 
-First off, I recommend cloning this `docs` branch into a seperate checkout entirely:
+## Getting Started
+
+First off, I recommend cloning this `docs` branch into a separate checkout entirely:
 
 ```bash
-git clone --branch docs --recurse-submodules https://github.com/bellflight/AVR-2022 AVR-2022-Docs
+git clone https://github.com/bellflight/AVR-Docs
+cd AVR-Docs
+npm install
 ```
 
 ## Tooling
 
 The generate the static site, we use the [Hugo](https://gohugo.io/)
-static site generator. While not strictly needed to write content for the site,
-it is very nice to have installed in order to preview the site.
+static site generator. The site is based on the [Docsy](https://docsy.dev)
+theme by Google. To install all the dependencies, you will need to have
+`nodejs` and `npm` installed. Check the [`.node-version`](.node-version) file
+to see what version of `node` is being used to build the site.
 
-The site based on the [Docsy](https://docsy.dev) theme by Google.
-To build or preview the site, make sure you have `npm` and `node` version 16+ installed.
-To install all the dependencies (including the Docsy theme), simply run:
+Running
 
 ```bash
 npm install
 ```
+
+will install all of the required dependencies and tools.
 
 To preview the site, run:
 
@@ -174,6 +180,23 @@ a banner across the page. The color options are the same as the `alert` shortcod
 {{% pageinfo color="warning" %}}
 This is placeholder content.
 {{% /pageinfo %}}
+```
+
+### Spellcheck
+
+We use [cSpell](https://cspell.org/) to spell check the documentation. However,
+due to lots of brand names and Linux commands, it frequently thinks words are spelled
+wrong.
+
+The best way to fix it, is to add the word to the [avr-wordlist.txt](avr-wordlist.txt)
+file. However, for larger sections of text that has issues
+(like command output or Youtube video IDs), place a "disable" and "enable" statement
+before and after like so:
+
+```markdown
+<!-- cSpell:disable -->
+{{< youtube c-8FmdxJJd4 >}}
+<!-- cSpell:enable -->
 ```
 
 ### Other

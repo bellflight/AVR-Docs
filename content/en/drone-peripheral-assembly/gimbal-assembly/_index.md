@@ -21,7 +21,7 @@ Tilt is the rotation abut the y-axis meaning it controls the up and down camera 
 
 Obtain the
 [gimbal parts]({{< relref "../../3d-printing/gimbal" >}})
-from the 3D printing section, 2 servos and associated hardware, a mosfet,
+from the 3D printing section, 2 servos and associated hardware, a MOSFET,
 the thermal camera, laser module, FPV camera, and long F-F dupont jumper wires.
 
 {{% alert title="Note" color="note" %}}
@@ -168,43 +168,43 @@ Next we will be focusing on the FPV and the Laser wiring as shown in the followi
 
 ![PCC Wiring](pcc_wiring.jpg)
 
-Solder extra header pins from the PCC section onto mosfet pins J1.
+Solder extra header pins from the PCC section onto MOSFET pins J1.
 
-![Mosfet with header pins soldered](mosfet_header_pins.jpg)
+![MOSFET with header pins soldered](MOSFET_header_pins.jpg)
 
 Cut wires (black and red) approximately 6" in length.
 
 Screw wires into the PCC Buck converter output terminal. There will be two wires coming out of the positive and negative terminals as shown in the photo below.
 
-![Leads that will power mosfet](buck_converter_to_mosfet.jpg)
+![Leads that will power MOSFET](buck_converter_to_MOSFET.jpg)
 
 Cut the extender provided with the FPV camera at the connector as shown in the following photo.
 
-![FPV camera cable ready to connect to mosfet](mosfet_and_fpv_power.jpg)
+![FPV camera cable ready to connect to MOSFET](MOSFET_and_fpv_power.jpg)
 
-Place both the power and FPV wire ends into the mosfet input terminals and screw down to terminal to secure.
+Place both the power and FPV wire ends into the MOSFET input terminals and screw down to terminal to secure.
 
-![Mosfet Power Supply](mosfet_input_with_fpv_power.jpg)
+![MOSFET Power Supply](MOSFET_input_with_fpv_power.jpg)
 
-Stack 2 layers of 3M double sided tape on the mosfet as shown in the following photo.
+Stack 2 layers of 3M double sided tape on the MOSFET as shown in the following photo.
 
-![Mosfet Mounting](mosfet_mounting_1.jpg)
+![MOSFET Mounting](MOSFET_mounting_1.jpg)
 
-Next mount your mosfet and plug in your FPV camera.
+Next mount your MOSFET and plug in your FPV camera.
 
-![Mosfet Mounting Location](mosfet_mounting_2.jpg)
+![MOSFET Mounting Location](MOSFET_mounting_2.jpg)
 
-Wire mosfet from the PCC. Wire A4 will run to the PWM. The Ground pin will run to GND.
+Wire MOSFET from the PCC. Wire A4 will run to the PWM. The Ground pin will run to GND.
 
-![Mosfet Diagram](mosfet_diagram.jpg)
+![MOSFET Diagram](MOSFET_diagram.jpg)
 
-![Mosfet Wiring](pcc_to_mosfet.jpg)
+![MOSFET Wiring](pcc_to_MOSFET.jpg)
 
 Cut and strip one side of a black and red Female-Female dupont jumper wire to approximately 8" in length.
 Screw wires in to their respective terminal blocks.
 Place the black and red wire on the ground and signal pins of the laser pointer respectively as shown in the following photo.
 
-![Laser Wiring](mosfet_to_laser.jpg)
+![Laser Wiring](MOSFET_to_laser.jpg)
 
 ## Thermal Camera
 

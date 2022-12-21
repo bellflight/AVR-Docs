@@ -12,7 +12,7 @@ included with the SMC battery as well as the manual for the Hitec charger.**
 You can learn more about these products at the links below:
 
 - [SMC True Spec DV Extreme 14.8V 5200mAh 135C Battery](https://www.smc-racing.com/index.php?route=product/product&path=67_171&product_id=642)
-- [Hitect RDX1 Pro charger](https://hitecrcd.com/products/chargers/acdc-chargers/rdx1-pro-/product)
+- [Hitec RDX1 Pro charger](https://hitecrcd.com/products/chargers/acdc-chargers/rdx1-pro-/product)
 
 ### Key Safety Points
 
@@ -69,7 +69,7 @@ charging 1S-6S batteries.
 
 Your kit includes a battery storage bag that can be used for storage, transport, and charging.
 
-![Lipo storage bag](racers_edge_lipo_bag.jpg)
+![LiPo storage bag](racers_edge_lipo_bag.jpg)
 
 We recommend you use this bag as a charging mat,
 this will give you an added layer of protection between the battery and
@@ -109,7 +109,7 @@ person to assist.
 
 If a class D fire extinguisher **is not** available, your next best bet is to throw
 a fire blanket over the fire to smother it as much as possible. This won't put it out
-but it will supress the flames. Most labs have a fire blanket.
+but it will suppress the flames. Most labs have a fire blanket.
 
 ![Example fire blanket](2022-06-26-18-28-26.png)
 

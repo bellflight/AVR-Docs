@@ -33,7 +33,9 @@ Use 3M double-sided foam tape to mount to the fan of the Jetson facing towards t
 
 ## Testing
 
+<!-- cSpell:disable -->
 {{< youtube 7TZ5N8Uggcs >}}
+<!-- cSpell:enable -->
 
 Commands run in video:
 

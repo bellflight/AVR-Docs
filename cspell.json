@@ -1,0 +1,10 @@
+{
+    "dictionaries": ["avr-wordlist"],
+    "dictionaryDefinitions": [
+        {
+            "name": "avr-wordlist",
+            "path": "./avr-wordlist.txt",
+            "addWords": true
+        }
+    ]
+}

@@ -34,7 +34,7 @@ Place a small drop of Loctite into the standoff and screw into place using a 2.0
 
 Repeat this process for all eight standoffs. Flip your AVR frame over so that the standoffs are facing up. Place a drop of loctite into each of them.
 
-![Standoffs with Loctitue](bottom_accessory_6.jpg)
+![Standoffs with Loctite](bottom_accessory_6.jpg)
 
 Place the bottom accessory plate onto the standoffs and secure with 10mm screws.
 

@@ -99,7 +99,7 @@ More info [here](https://docs.qgroundcontrol.com/master/en/SetupView/Radio.html)
 
 The Vehicle Management Computer is the companion computer that performs various
 tasks and communicates with the Flight Controller. This is where your custom software
-will be run to complete the challenges for the competiton.
+will be run to complete the challenges for the competition.
 
 ## Advanced Vertical Robotics (AVR)
 

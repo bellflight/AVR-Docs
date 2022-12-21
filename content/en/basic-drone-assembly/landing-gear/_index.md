@@ -14,7 +14,7 @@ Your AVR kit ships with 4 x 9" aluminum rods that are used for landing gear. As 
 
 ![3D printed parts and aluminum rods for landing gear](landing_gear_drilling_1.jpg)
 
-Attaching the aluminmum rods to the landing gear mounts will require drilling holes in each rod. We will walk through this process in detail to ensure success and minimize frustration. You will need a drill, 1/16" bit, 1/8" bit, screw (or nail), and a Sharpie.
+Attaching the aluminum rods to the landing gear mounts will require drilling holes in each rod. We will walk through this process in detail to ensure success and minimize frustration. You will need a drill, 1/16" bit, 1/8" bit, screw (or nail), and a Sharpie.
 
 ![Tools necessary for drilling aluminum rod](landing_gear_drilling_2.jpg)
 
@@ -58,7 +58,7 @@ Place the rod back into the mount make sure it's all the way in. Slide a 22mm sc
 
 ![Marking other side of rod for drilling](landing_gear_drilling_11.jpg)
 
-Repeat the tapping and driling process for the other side of the rod. Once that's complete place the rod back into the mount, slide the 22mm screw all the way through, and secure the rod with a lock nut.
+Repeat the tapping and drilling process for the other side of the rod. Once that's complete place the rod back into the mount, slide the 22mm screw all the way through, and secure the rod with a lock nut.
 
 ![Screwing landing gear into the mount](landing_gear_drilling_12.jpg)
 

@@ -16,7 +16,7 @@ You may be wondering how to determine the rotation of each motor. There are two 
 
 ![CW (black cap) and CCW (silver cap) motors](cw_and_ccw_motors.jpg)
 
-With that out of the way let's cover a much more intutive (in our opinion) way to determine motor rotation. It requires using the propellers included in your kit. The **silver capped propeller** is a CCW rotating propeller and is threaded in a way that it will only screw onto the CCW motors. The **black capped propeller** is a CW rotating propeller. It is threaded in a way that it will only screw onto the CW rotating motors.
+With that out of the way let's cover a much more intuitive (in our opinion) way to determine motor rotation. It requires using the propellers included in your kit. The **silver capped propeller** is a CCW rotating propeller and is threaded in a way that it will only screw onto the CCW motors. The **black capped propeller** is a CW rotating propeller. It is threaded in a way that it will only screw onto the CW rotating motors.
 
 The photo below shows an example of installing a CW rotating propeller. Hold the propeller in place and rotate the motor in a clockwise direction. If the thread pattern is correct the propeller will screw onto the motor shaft and lock into place.
 

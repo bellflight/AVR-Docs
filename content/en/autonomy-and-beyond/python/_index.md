@@ -11,7 +11,7 @@ Before we get started, make sure you have the Visual Studio Code extension for P
 
 ![Installing the Python Extension in VS Code](PythonPic1.png)
 
-This extension allows for debugging, auto complete, and python environment managemebnt in VS Code.
+This extension allows for debugging, auto complete, and Python environment management in VS Code.
 
 ## Python Interpreter
 

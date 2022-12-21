@@ -3,7 +3,7 @@ title: "Using Git"
 weight: 7
 ---
 
-This section will intorduce you to the basics of using git and will walk you through an example using VS Code.
+This section will introduce you to the basics of using git and will walk you through an example using VS Code.
 
 ## Basics of Git
 
@@ -13,7 +13,7 @@ We will primarily focus on _commit_, _push_, and _pull_.
 
 - A _commit_ is used to capture the state of the project at a point in time. It saves any additions or changes to the local repository from your workspace.
 
-- A _push_ adds all commited files to the remote repository. In this case, your remote repository is hosted in GitHub.
+- A _push_ adds all committed files to the remote repository. In this case, your remote repository is hosted in GitHub.
 
 - A _pull_ gets files from the remote repository and puts them directly in your local directory. You will need to manually manage issues between conflicting files.
 
@@ -39,7 +39,7 @@ The test file you made should show up in source control. Click the "+" button to
 
 ![Staged change with message](git5.png)
 
-Click the check mark to commit the change. It is not saved in your local repository. The last step is to store this change in GitHub. The "Sync Changes" button that appears gives theuser the option to automatically _pull_ and _push_ to the remote repository. Select this to complete the process.
+Click the check mark to commit the change. It is not saved in your local repository. The last step is to store this change in GitHub. The "Sync Changes" button that appears gives the user the option to automatically _pull_ and _push_ to the remote repository. Select this to complete the process.
 
 ![Pulling and Pushing your change](git6.png)
 

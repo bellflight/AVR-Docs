@@ -22,7 +22,7 @@ Type your username@IPaddress and press enter. Select "Linux" as your operating s
 
 ![Operating System Selection](Pic3.png)
 
-A seperate VS Code window should open. You now have access to the directories on your Jetson. On the left pane, select "Open Folder".
+A separate VS Code window should open. You now have access to the directories on your Jetson. On the left pane, select "Open Folder".
 
 ![List of directories on the Jetson](Pic4.png)
 

@@ -10,4 +10,6 @@ switch on SWD (2 position switch). This is **VERY IMPORTANT** in case the
 AVR drone needs to be shut down due to a fly-away or complete loss of control.
 The video below demonstrates this process.
 
+<!-- cSpell:disable -->
 {{< youtube a5caYemjKmk >}}
+<!-- cSpell:enable -->

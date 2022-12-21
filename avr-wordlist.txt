@@ -1,0 +1,80 @@
+# Hugo shortcodes
+shortcode
+relref
+pageinfo
+
+# Brand names
+Jetson
+Pixhawk
+Balena
+Tello
+Loctite
+Sphero
+Adafruit
+Featherwing
+Featherwings
+FEATHERBOOT
+Tripler
+Onshape
+RDDRONE
+FMUK
+Hitec
+Tekko32
+
+# Commands/Linux
+nmcli
+wlan
+cuda
+visionworks
+backports
+backports
+MAXN
+timesyncd
+hctosys
+hwclock
+timedatectl
+hotspot
+preauth
+deadsnakes
+bootloader
+libwxgt
+libwxgtk
+libreadline
+libfuse2
+
+# Modules
+mavp2p
+mosquitto
+apriltag
+apriltags
+
+# Python
+matplotlib
+venv
+
+# AVR
+bellavr
+AVRGUI
+midplate
+
+# Drones
+quadcopter
+Quadrotor
+octocopter
+
+# Electronics
+desolder
+TELEM1
+TELEM2
+pinout
+MOSFET
+microcontroller
+milliamp
+VBAT
+SBUS
+
+# misc
+Counterbore
+usec
+multipack
+overtighten

@@ -116,7 +116,7 @@ want to run your own code in the sandbox module you can use the `--all` option:
 - sandbox
 
 Lastly, if you want to run modules not defined in a preset here, you can either
-list them all out explicitly, or add the additional modules you want to an exisiting
+list them all out explicitly, or add the additional modules you want to an existing
 alias:
 
 ```bash
@@ -152,6 +152,7 @@ Sometimes when starting the AVR software, things don't all start correctly.
 
 Example output:
 
+<!-- cSpell:disable -->
 ```text
 Needing sudo privileges to run docker, re-launching
 Running command: docker-compose --project-name AVR-2022 --file /tmp/docker-compose-v5eqlg13.yml up --remove-orphans --force-recreate pcm
@@ -166,6 +167,7 @@ ERROR: for avr-2022_pcm_1  Cannot start service pcm: error gathering device info
 ERROR: for pcm  Cannot start service pcm: error gathering device information while adding custom device "/dev/ttyACM0": no such file or directory
 ERROR: Encountered errors while bringing up the project.
 ```
+<!-- cSpell:enable -->
 
 This error means that the AVR software was unable to connect to the PCC.
 If you are not using the PCC, follow the steps above to disable that module.
