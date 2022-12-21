@@ -48,7 +48,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     # this will not run if docs-build does not run first
-    needs: docs-build
+    needs: build
 
     permissions:
       pages: write      # to deploy to Pages
