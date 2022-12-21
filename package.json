@@ -24,6 +24,6 @@
     "lint": "markdownlint content/",
     "server": "node -e \"const open = require('open'); open('http://localhost:1313');\" && hugo server -p 1313",
     "update": "ncu --upgrade && npm install",
-    "spellcheck": "cspell content/**/*.md"
+    "spellcheck": "cspell \"content/**/*.md\""
   }
 }
