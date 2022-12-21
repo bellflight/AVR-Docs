@@ -260,6 +260,7 @@ you can plot how your drone flew through 3D space using
 `matplotlib` and `pandas`:
 
 <!-- cSpell:disable -->
+
 ```python
 import json
 
@@ -285,6 +286,7 @@ ax.set_zlabel("Altitude")
 plt.legend()
 plt.show()
 ```
+
 <!-- cSpell:enable -->
 
 ![Using `matplotlib` to plot a drone's flight](2022-06-17-11-31-33.png)
@@ -292,6 +294,7 @@ plt.show()
 Another example is plotting the drone's battery remaining over time:
 
 <!-- cSpell:disable -->
+
 ```python
 import csv
 import datetime
@@ -329,6 +332,7 @@ plt.grid(True)
 
 plt.show()
 ```
+
 <!-- cSpell:enable -->
 
 ![Using `matplotlib` to plot battery percentage](2022-06-18-13-46-34.png)

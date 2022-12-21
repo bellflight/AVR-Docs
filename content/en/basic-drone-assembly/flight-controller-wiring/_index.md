@@ -93,7 +93,9 @@ The ESC leads are very thin. We have found it easiest to pinch with your fingern
 Match up the wire color on the FC side with the same color on the ESC side. Twist the wires together using the "Twisted Helix" method described in the video below.
 
 <!-- cspell:disable -->
+
 {{< youtube 2PrJmyux_Us >}}
+
 <!-- cspell:enable -->
 
 {{% alert title="Warning" color="warning" %}}
