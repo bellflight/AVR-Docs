@@ -11,7 +11,7 @@
         "kaellarkin.hugo-shortcode-syntax",
         "streetsidesoftware.code-spell-checker"
     ],
-    "postCreateCommand": "npm install && git config --global core.autocrlf input",
+    "postCreateCommand": "npm install && npm install -g npm",
     "forwardPorts": [
         1313
     ]
