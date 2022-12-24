@@ -43,6 +43,6 @@
     "printWidth": 88
   },
   "pre-commit": [
-    "format"
+    "format:check"
   ]
 }
