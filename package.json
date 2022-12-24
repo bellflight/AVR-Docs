@@ -19,7 +19,7 @@
   },
   "scripts": {
     "build": "hugo --cleanDestinationDir --verbose && node postprocess.js",
-    "format": "prettier --write content/",
+    "format": "prettier --write content/ --prose-wrap always --print-width 88",
     "format:check": "prettier --check content/",
     "lint": "markdownlint content/",
     "server": "node -e \"const open = require('open'); open('http://localhost:1313');\" && hugo server -p 1313",

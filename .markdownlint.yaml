@@ -2,7 +2,7 @@
 
 # line length
 MD013:
-    # bump upd default line length
+    # bump up default line length
     line_length: 88
     # ignore code blocks with long lines
     code_blocks: false
