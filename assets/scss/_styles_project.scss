@@ -24,16 +24,6 @@ ul.foldable {
 //   width: 30px;
 // }
 
-// fix code blocks and cards being limited to 80% width
-// at all screen resolutions
-@media (max-width: 992px) {
-
-  .card,
-  .td-content .highlight {
-    max-width: none;
-  }
-}
-
 // give alerts a background color and box shadow
 .alert {
   background-color: #ebebeb;
