@@ -15,6 +15,7 @@
     "markdownlint-cli": "^0.32.2",
     "npm-check-updates": "^16.6.2",
     "open-cli": "^7.1.0",
+    "pre-commit": "^1.2.2",
     "prettier": "^2.8.1"
   },
   "scripts": {
@@ -40,5 +41,8 @@
   "prettier": {
     "proseWrap": "always",
     "printWidth": 88
-  }
+  },
+  "pre-commit": [
+    "format"
+  ]
 }
