@@ -6,11 +6,11 @@ weight: 2
 ## Connecting to Internet
 
 In order to install the AVR software, your Jetson needs to have an internet connection.
-The easiest way by far is if you have ethernet available. If so, just plug
-an ethernet cable into your Jetson and you should be good to go.
+The easiest way by far is if you have ethernet available. If so, just plug an ethernet
+cable into your Jetson and you should be good to go.
 
-If you don't have ethernet, you can use a WiFi connection. First, you can list
-the available networks with:
+If you don't have ethernet, you can use a WiFi connection. First, you can list the
+available networks with:
 
 ```bash
 nmcli device wifi list
@@ -44,19 +44,18 @@ such as:
 sudo nmcli device wifi connect "WI do drones FI" password "Flying_Is_Fun"
 ```
 
-If your network name or password has a space or other special characters,
-you'll need to wrap it in quotes as shown above.
+If your network name or password has a space or other special characters, you'll need to
+wrap it in quotes as shown above.
 
 ## Updating
 
-Bell engineers are constantly working on improving the VMC software.
-If a new version is ever available, you just need to go into the
-directory the repo is cloned to, pull the latest code, and re-run the setup script:
+Bell engineers are constantly working on improving the VMC software. If a new version is
+ever available, you just need to go into the directory the repo is cloned to, pull the
+latest code, and re-run the setup script:
 
-{{% pageinfo color="warning" %}}
-There have been a lot of changes since your Jetson was preloaded with software.
-Please ensure that you successfully run `git pull` in the following steps.
-{{% /pageinfo %}}
+{{% pageinfo color="warning" %}} There have been a lot of changes since your Jetson was
+preloaded with software. Please ensure that you successfully run `git pull` in the
+following steps. {{% /pageinfo %}}
 
 ```bash
 cd ~/AVR-2022/VMC/scripts
@@ -64,8 +63,8 @@ git pull
 ./setup.py
 ```
 
-The `setup.py` script is safe to run at any time,
-it won't mess anything up by running it after everything is already configured.
+The `setup.py` script is safe to run at any time, it won't mess anything up by running
+it after everything is already configured.
 
 ## Troubleshooting
 
@@ -117,8 +116,8 @@ E: Release file for http://ports.ubuntu.com/ubuntu-ports/dists/bionic-backports/
 E: Release file for http://ports.ubuntu.com/ubuntu-ports/dists/bionic-security/InRelease is not valid yet (invalid for another 2728d 5h 39min 48s). Updates for this repository will not be applied.
 ```
 
-This usually means your system's time is not correct. Try running the following
-commands to force your system to correct its time.
+This usually means your system's time is not correct. Try running the following commands
+to force your system to correct its time.
 
 ```bash
 # After each attempt, run the `date` command to check the time to see if it worked
@@ -147,12 +146,12 @@ Example output:
 WARNING: ZED camera not detected, skipping settings download
 ```
 
-Obviously, make sure your ZED Mini camera is plugged in to the Jetson. If not,
-plug it in and re-run the setup script.
+Obviously, make sure your ZED Mini camera is plugged in to the Jetson. If not, plug it
+in and re-run the setup script.
 
-However, if it is, this sometimes happens because of a finnicky USB detection.
-Try running the setup script once or twice more, and unplug the camera and plug
-it back in until it picks it up and works.
+However, if it is, this sometimes happens because of a finnicky USB detection. Try
+running the setup script once or twice more, and unplug the camera and plug it back in
+until it picks it up and works.
 
 ### Connection Issues
 
@@ -197,12 +196,12 @@ W: Failed to fetch http://ports.ubuntu.com/ubuntu-ports/dists/bionic-security/In
 W: Some index files failed to download. They have been ignored, or old ones used instead.
 ```
 
-If the setup script fails to download something, it likely lost
-connection to the internet, or your network is blocking a site it tried
-to download content from. Try running the script again.
+If the setup script fails to download something, it likely lost connection to the
+internet, or your network is blocking a site it tried to download content from. Try
+running the script again.
 
 If that still does not work, look at the VMC software README at
 [https://github.com/bellflight/AVR-2022/tree/main/VMC/README.md](https://github.com/bellflight/AVR-2022/tree/main/VMC/README.md)
-and the provided list of domain names that the setup script connects to.
-Either see if your network administrator can allow these domain names,
-or use a personal hotspot or internet connection.
+and the provided list of domain names that the setup script connects to. Either see if
+your network administrator can allow these domain names, or use a personal hotspot or
+internet connection.

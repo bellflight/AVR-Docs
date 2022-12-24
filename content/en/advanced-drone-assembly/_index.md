@@ -3,9 +3,9 @@ title: "Advanced Drone Assembly"
 weight: 11
 ---
 
-Please make sure you've successfully **built** and **flown** your basic AVR drone.
-You will be making some extensive modifications to your drone in
-preparation for advanced assembly.
+Please make sure you've successfully **built** and **flown** your basic AVR drone. You
+will be making some extensive modifications to your drone in preparation for advanced
+assembly.
 
 ![AVR advanced drone assembly (front)](avr_advanced_drone_front.jpg)
 

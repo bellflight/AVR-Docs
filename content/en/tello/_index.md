@@ -16,8 +16,7 @@ prior to operating the Tello:
 
 - [https://learn.droneblocks.io/p/troubleshooting-tello](https://learn.droneblocks.io/p/troubleshooting-tello)
 
-{{% alert title="Note" color="note" %}}
-Note that your Tello has been shipped with the firmware already updated to the latest
-version. So, you can skip that step any time it is mentioned, and jump straight into
-programming with the DroneBlocks app!
+{{% alert title="Note" color="note" %}} Note that your Tello has been shipped with the
+firmware already updated to the latest version. So, you can skip that step any time it
+is mentioned, and jump straight into programming with the DroneBlocks app!
 {{% /alert %}}

@@ -14,16 +14,31 @@
   "devDependencies": {
     "markdownlint-cli": "^0.32.2",
     "npm-check-updates": "^16.6.2",
-    "open": "^8.4.0",
+    "open-cli": "^7.1.0",
     "prettier": "^2.8.1"
   },
   "scripts": {
     "build": "hugo --cleanDestinationDir --verbose && node postprocess.js",
-    "format": "prettier --write content/ --prose-wrap always --print-width 88",
+    "format": "prettier --write content/",
     "format:check": "prettier --check content/",
     "lint": "markdownlint content/",
-    "server": "node -e \"const open = require('open'); open('http://localhost:1313');\" && hugo server -p 1313",
+    "server": "open-cli http://localhost:1313 && hugo server -p 1313",
     "update": "ncu --upgrade && npm install",
     "spellcheck": "cspell \"content/**/*.md\""
+  },
+  "cspell": {
+    "dictionaries": [
+      "avr-wordlist"
+    ],
+    "dictionaryDefinitions": [
+      {
+        "name": "avr-wordlist",
+        "path": "./avr-wordlist.txt"
+      }
+    ]
+  },
+  "prettier": {
+    "proseWrap": "always",
+    "printWidth": 88
   }
 }

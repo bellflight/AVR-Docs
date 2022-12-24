@@ -3,18 +3,15 @@ title: "System Setup"
 weight: 2
 ---
 
-{{% pageinfo color="warning" %}}
-Your Jetson should already have the operating system installed and configured for you.
-These instructions are provided in case you need to wipe your Jetson and start fresh.
-{{% /pageinfo %}}
+{{% pageinfo color="warning" %}} Your Jetson should already have the operating system
+installed and configured for you. These instructions are provided in case you need to
+wipe your Jetson and start fresh. {{% /pageinfo %}}
 
 ## Initial Setup
 
-{{% alert title="Note" color="note" %}}
-If using a serial connection, all the navigation here on out will be done via your
-keyboard. Use the arrow keys and <kbd>Tab</kbd> to move the cursor,
-and <kbd>Enter</kbd> to confirm options.
-{{% /alert %}}
+{{% alert title="Note" color="note" %}} If using a serial connection, all the navigation
+here on out will be done via your keyboard. Use the arrow keys and <kbd>Tab</kbd> to
+move the cursor, and <kbd>Enter</kbd> to confirm options. {{% /alert %}}
 
 ![](2022-06-18-16-13-30.png)
 
@@ -79,8 +76,8 @@ Go ahead and select "Do not configure the network at this time".
 
 ![](2022-06-18-16-23-21.png)
 
-Select an appropriate [hostname](https://xkcd.com/910/) for your Jetson.
-"drone" is a good choice.
+Select an appropriate [hostname](https://xkcd.com/910/) for your Jetson. "drone" is a
+good choice.
 
 ![](2022-06-18-16-24-35.png)
 

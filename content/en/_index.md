@@ -9,21 +9,19 @@ cascade:
 
 ## Introduction
 
-Welcome to the documentation for the Bell Advanced Vertical Robotics competition!
-Be sure to pay attention to the navigation links on the left and please keep in mind
-that this documentation is a **living document** that will be constantly updated over time.
-There will be new sections added, typos fixed, and bugs squashed throughout
-this process.
+Welcome to the documentation for the Bell Advanced Vertical Robotics competition! Be
+sure to pay attention to the navigation links on the left and please keep in mind that
+this documentation is a **living document** that will be constantly updated over time.
+There will be new sections added, typos fixed, and bugs squashed throughout this
+process.
 
-{{% alert title="Warning" color="warning" %}}
-It is **incredibly important** to follow the steps outlined in this documentation in
-order. The navigation on the left provides a sequential ordering of steps.
-{{% /alert %}}
+{{% alert title="Warning" color="warning" %}} It is **incredibly important** to follow
+the steps outlined in this documentation in order. The navigation on the left provides a
+sequential ordering of steps. {{% /alert %}}
 
 ## Requirements
 
-To be able to successfully compete in AVR, you must have the following
-available to you:
+To be able to successfully compete in AVR, you must have the following available to you:
 
 - A 3D printer (8.5" cubed) with 1 roll of ABS filament
 - A laptop with one of the following:
