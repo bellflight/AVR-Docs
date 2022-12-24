@@ -67,6 +67,30 @@ function main() {
         // write the file back
         fs.writeFileSync(html_file, soup.root().html());
     });
+
+    // fix the web manifest icon src path
+    var manifest = path.join("public", "favicons", "site.webmanifest");
+    // load file
+    var manifest_data = JSON.parse(fs.readFileSync(manifest, "utf8"));
+    // apply to each icon element (thanks AI)
+    manifest_data.icons = manifest_data.icons.map((icon) => {
+        // src starts a with a /
+        var src = icon.src;
+        if (base_url != "/") {
+            if (base_url.endsWith("/")) {
+                src = `${base_url.slice(0, -1)}${src}`;
+            } else {
+                src = `${base_url}/${src}`;
+            }
+        }
+        return {
+            src: src,
+            sizes: icon.sizes,
+            type: icon.type
+        };
+    })
+    // write out
+    fs.writeFileSync(manifest, JSON.stringify(manifest_data, null, 4));
 }
 
 assert(process.cwd() == __dirname);
