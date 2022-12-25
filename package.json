@@ -43,6 +43,7 @@
     "printWidth": 88
   },
   "pre-commit": [
+    "spellcheck",
     "format:check"
   ]
 }
