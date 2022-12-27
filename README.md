@@ -6,7 +6,7 @@
 git clone https://github.com/bellflight/AVR-Docs
 cd AVR-Docs
 npm install
-code
+code .
 ```
 
 I recommend installing the recommended VSCode extensions, and enabling
