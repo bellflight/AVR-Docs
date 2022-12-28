@@ -5,9 +5,9 @@ weight: 3
 
 ## Internet
 
-In order to install the AVR software, your Jetson needs to have an internet connection.
-The easiest way by far is if you have ethernet available. If so, just plug an ethernet
-cable into your Jetson and you should be good to go.
+To install the AVR software, your Jetson needs to have an internet connection. The
+easiest way by far is if you have ethernet available. If so, just plug an ethernet cable
+into your Jetson and you should be good to go.
 
 If you don't have ethernet, you can use a WiFi connection. First, you can list the
 available networks with:
@@ -41,7 +41,7 @@ sudo nmcli device wifi connect <network name>
 such as:
 
 ```bash
-sudo nmcli device wifi connect "WI do drones FI" password "Flying_Is_Fun"
+sudo nmcli device wifi connect "WI do drones FI" password "Antigravity"
 ```
 
 If your network name or password has a space or other special characters, you'll need to
@@ -50,14 +50,14 @@ wrap it in quotes as shown above.
 ## Install
 
 ```bash
-git clone --recurse-submodules https://github.com/bellflight/AVR-2022 ~/AVR-2022
-cd ~/AVR-2022/VMC/scripts
-chmod +x setup.py
-./setup.py
+git clone --recurse-submodules https://github.com/bellflight/AVR-VMC ~/AVR-VMC
+cd ~/AVR-VMC/
+chmod +x install.py
+./install.py
 ```
 
-This clones the software repo, changes directory into the repo you just cloned, makes
-the setup script executable, and then executes the setup script.
+This clones the software repo, changes the directory into the repo you just cloned,
+makes the setup script executable, and then executes the setup script.
 
 ![Setup script starting](2022-06-14-19-50-52.png)
 

@@ -45,7 +45,6 @@ of the drone.
 Commands run in video:
 
 ```bash
-cd AVR-2022/VMC/
 ./start.py run -n
 ```
 
@@ -54,7 +53,6 @@ useful information. For instance if you are doing just a flight test with no per
 you may want to try the following.
 
 ```bash
-cd AVR-2022/VMC/
 ./start.py run status -m
 ```
 

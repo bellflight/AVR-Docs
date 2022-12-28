@@ -30,8 +30,8 @@ Jetson. On the left pane, select "Open Folder".
 
 ![List of directories on the Jetson](Pic4.png)
 
-When prompted, select the AVR-2022 location and press "OK".
+When prompted, select the `AVR-VMC` location and press "OK".
 
-![](Pic5.png)
+![](2022-12-27-22-57-55.png)
 
 You should now be ready for development on your Jetson.

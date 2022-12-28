@@ -8,13 +8,10 @@ parameters into your flight controller as well. These settings configure how the
 controller processes sensor input, and we need to tell it to unconditionally trust the
 data the AVR software feeds it.
 
-First, download this parameter file from GitHub:
-[https://github.com/bellflight/AVR-2022/blob/main/PX4/Params/AVR2022Params.params](https://github.com/bellflight/AVR-2022/blob/main/PX4/Params/AVR2022Params.params)
+First, download the parameter file from the latest GitHub release:
+[https://github.com/bellflight/AVR-PX4-Firmware/releases/latest](https://github.com/bellflight/AVR-PX4-Firmware/releases/latest)
 
-The easiest way to download the file is to click the "Raw" button, then right-click the
-page, and select "Save page as".
-
-![The location of the "Raw" button](2022-05-20-11-47-18.png)
+![](2022-12-27-19-05-08.png)
 
 Like flashing the flight controller firmware, you'll need to plug in the FC to your
 computer with the MicroUSB cable.

@@ -56,7 +56,7 @@ pygmentsStyle = "monokai"
 
     # A link to latest version of the docs. Used in the "version-banner" partial to
     # point people to the main doc site.
-    url_latest_version = "https://bellflight.github.io/AVR-Docs"
+    # url_latest_version = "https://bellflight.github.io/AVR-Docs"
 
     # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
     github_repo = "https://github.com/bellflight/AVR-Docs"
@@ -70,7 +70,7 @@ pygmentsStyle = "monokai"
 
     # Uncomment this if you have a newer GitHub repo with "main" as the default branch,
     # or specify a new value if you want to reference another branch in your GitHub links
-    github_branch = "docs"
+    github_branch = "main"
 
     # Enable Algolia DocSearch
     algolia_docsearch = false

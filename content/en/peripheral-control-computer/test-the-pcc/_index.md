@@ -31,7 +31,7 @@ Now it's time to download the AVR GUI program.
 ### Windows
 
 Go to the latest
-[AVR software release](https://github.com/bellflight/AVR-2022/releases/tag/stable) and
+[AVR software release](https://github.com/bellflight/AVR-GUI/releases/latest) and
 download the `AVRGUI.<hash>.exe` file. Like QGroundControl, you may need to bypass some
 warnings about being an untrusted file.
 
@@ -42,36 +42,32 @@ warnings about being an untrusted file.
 ### Other Platforms
 
 For Linux and MacOS, we recommend running the AVR GUI from source. You'll need to have
-Python 3.9 or Python 3.10 installed.
+Python 3.9 or newer installed.
 
-For Linux users, here's how you can easily install Python 3.10:
+For Linux users, here's how you can easily install Python 3.11:
 
 ```bash
 sudo add-apt-repository ppa:deadsnakes/ppa
-sudo apt install python3-pip python3.10 python3.10-venv
-sudo -H python3.10 -m pip install pip wheel --upgrade
+sudo apt install python3-pip python3.11 python3.11-venv
+sudo -H python3.11 -m pip install pip wheel --upgrade
 ```
 
 For MacOS users, go to the Python releases page for MacOS and download an appropriate
 installer:
 [https://www.python.org/downloads/macos/](https://www.python.org/downloads/macos/)
 
-Now, run the following commands to clone the code repository where desired, and setup
-the dependencies.
+Now, run commands
+[on the repository page](https://github.com/bellflight/AVR-GUI/blob/main/README.md#development)
+to clone the code repository where desired, and setup the dependencies:
 
 ```bash
-# clone the repo
-git clone https://github.com/bellflight/AVR-2022
-# cd into the repo
-cd AVR-2022
-# create a Python virtual environment
-# You may need to replace `python` here with `python3` or `python3.10`
-python -m venv .venv
-# activate the virtual environment
-source .venv/bin/activate
-# install the dependencies
-python scripts/install_requirements.py --directory GUI
-# run the application
+python -m pip install pipx --upgrade
+pipx ensurepath
+pipx install poetry
+git clone https://github.com/bellflight/AVR-GUI
+cd AVR-GUI
+poetry install --sync
+poetry shell
 python GUI/app.py
 ```
 
@@ -79,8 +75,8 @@ In the future to run the application, you'll just need to activate the virtual
 environment first:
 
 ```bash
-cd AVR-2022
-source .venv/bin/activate
+cd AVR-GUI
+poetry shell
 python GUI/app.py
 ```
 

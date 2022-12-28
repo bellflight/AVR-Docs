@@ -49,18 +49,18 @@ wrap it in quotes as shown above.
 
 ## Updating
 
-Bell engineers are constantly working on improving the VMC software. If a new version is
-ever available, you just need to go into the directory the repo is cloned to, pull the
-latest code, and re-run the setup script:
+The VMC software is constantly being updated. If a new version is ever available, you
+just need to go into the directory the repo is cloned to, pull the latest code, and
+re-run the setup script:
 
 {{% pageinfo color="warning" %}} There have been a lot of changes since your Jetson was
 preloaded with software. Please ensure that you successfully run `git pull` in the
 following steps. {{% /pageinfo %}}
 
 ```bash
-cd ~/AVR-2022/VMC/scripts
+cd ~/AVR-VMC/
 git pull
-./setup.py
+./install.py
 ```
 
 The `setup.py` script is safe to run at any time, it won't mess anything up by running
@@ -201,7 +201,7 @@ internet, or your network is blocking a site it tried to download content from. 
 running the script again.
 
 If that still does not work, look at the VMC software README at
-[https://github.com/bellflight/AVR-2022/tree/main/VMC/README.md](https://github.com/bellflight/AVR-2022/tree/main/VMC/README.md)
+[https://github.com/bellflight/AVR-VMC/tree/main/README.md](https://github.com/bellflight/AVR-VMC/tree/main/README.md)
 and the provided list of domain names that the setup script connects to. Either see if
 your network administrator can allow these domain names, or use a personal hotspot or
 internet connection.

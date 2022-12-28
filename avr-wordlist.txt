@@ -51,6 +51,8 @@ apriltags
 # Python
 matplotlib
 venv
+pipx
+ensurepath
 
 # AVR
 bellavr

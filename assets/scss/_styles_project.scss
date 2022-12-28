@@ -76,4 +76,9 @@ div.highlight button {
   cursor: zoom-in !important;
 }
 
-
+// Make code copy button look better
+.td-content .highlight pre button {
+  box-shadow: none;
+  border-width: 1px;
+  border-color: rgba(204, 204, 204, 0.5);
+}

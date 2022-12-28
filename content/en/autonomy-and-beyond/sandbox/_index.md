@@ -3,13 +3,8 @@ title: "Sandbox"
 weight: 6
 ---
 
-Your team will need to create a sandbox environment to develop from.
-
-In the
-[GitHub repository](https://github.com/bellflight/AVR-2022/tree/main/VMC/README.md)
-we've provided an area for you to write Python in order to accomplish your goals. The
-software stack for AVR is made up of a series of modules, which are actually independent
-[Docker Containers](https://www.docker.com/resources/what-container).
+The software stack for AVR is made up of a series of modules, which are actually
+independent [Docker Containers](https://www.docker.com/resources/what-container).
 
 Below is a graphic that shows the individual containers:
 

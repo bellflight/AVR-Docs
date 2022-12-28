@@ -11,10 +11,10 @@ of modern code management.
 ## Windows Install
 
 To install Git, simply select the standalone installer from the
-[git-scm website](https://git-scm.com/download/win)
+[git-scm website](https://git-scm.com/download/win).
 
-Run through the installation process. Once the install is completed, you will need to
-setup a username and email address for your machine.
+Run through the installation process. Once the installation is completed, you will need
+to setup a name and email address for your machine.
 
 ## Jetson Install
 
@@ -28,8 +28,8 @@ and type the following:
 <!-- cSpell:disable -->
 
 ```bash
-git config --global user.name "yourusername"
-git config --global user.email "email@youremail.com"
+git config --global user.name "Your Name"
+git config --global user.email "your.name@email.com"
 ```
 
 <!-- cSpell:enable -->

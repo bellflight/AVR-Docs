@@ -12,6 +12,7 @@ description: "3D prints for the landing gear"
 - AVR-LANDING-GEAR-BRACE (x4)
   - STL file:
     [AVR-LANDING-GEAR-BRACE.stl](https://cad.onshape.com/documents/485005cf8f758e5c698effb5/w/bd4c6d9668037e376ceb49f9/e/550aecfaa6c26cb1a344f6df)
+    (This one needs to be exported as "inches" to import correctly)
   - STEP file:
     [AVR-LANDING-GEAR-BRACE.stp](https://cad.onshape.com/documents/129bfa2356bc354a6be7862a)
 - AVR-LANDING-GEAR-FOOT (x4)
@@ -21,5 +22,10 @@ description: "3D prints for the landing gear"
     [AVR-LANDING-GEAR-FOOT.stp](https://cad.onshape.com/documents/4e2a1a3e0036de025ce1eee8)
 
 {{% alert title="Note" color="note" %}} For the landing gear it is highly advised that
-you print with 100% infill as these are going to be parts that will need to with stand
-the impact of landing. {{% /alert %}}
+you print with 100% infill as these are going to be parts that will need to withstand
+the impact of landing.
+
+Additionally, you should print the mounts vertically for increased strength. This puts
+the layers perpendicular to most of the forces applied rather than parallel.
+
+![Recommended mount printing orientation](2022-12-27-18-52-38.png) {{% /alert %}}

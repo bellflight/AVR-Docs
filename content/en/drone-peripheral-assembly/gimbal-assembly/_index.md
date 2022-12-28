@@ -140,13 +140,12 @@ of motion.
 
 {{% alert title="Note" color="note" %}} If you do not have the "invert joystick" option
 in your GUI be sure you have the
-[latest stable release](https://github.com/bellflight/AVR-2022/releases/tag/stable) of
-the GUI. {{% /alert %}}
+[latest release](https://github.com/bellflight/AVR-GUI/releases/latest) of the GUI.
+{{% /alert %}}
 
-Command used in video for starting the services
+Command used in the video:
 
 ```bash
-cd AVR-2022/VMC
 ./start.py run mqtt pcm
 ```
 

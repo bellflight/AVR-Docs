@@ -14,7 +14,7 @@ Go to your extensions tab, search "Python", and install.
 
 ![Installing the Python Extension in VS Code](PythonPic1.png)
 
-This extension allows for debugging, auto complete, and Python environment management in
+This extension allows for debugging, auto-complete, and Python environment management in
 VS Code.
 
 ## Python Interpreter
@@ -22,9 +22,11 @@ VS Code.
 An interpreter's job is to take the high-level code written by your team in VS code and
 to translate it into machine language that is executed by your computer.
 
-The Python interpreter is installed from Python.org - install it from
-[here](https://www.python.org/downloads/release/python-3912/). Select the installer and
-run through the installation process.
+The Python interpreter is best installed from Python.org. Go to the
+[downloads](https://www.python.org/downloads/) page, and select the latest version for
+your operating system.
+
+![](2022-12-27-21-59-20.png)
 
 To confirm your installation, open a command prompt window and execute the following
 command:

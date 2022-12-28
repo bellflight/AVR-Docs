@@ -10,8 +10,7 @@ act as it's own WiFi network you can connect to. To do this, login to the Jetson
 into the "VMC" directory, and run the command `./scripts/wifi.py create`:
 
 ```bash
-cd ~/AVR-2022/VMC/
-./scripts/wifi.py create
+./wifi.py create
 ```
 
 This will walk you through creating a WiFi network that you can connect to.
@@ -34,11 +33,9 @@ SSH]({{< relref "../connecting-to-the-jetson/#ssh" >}}).
 
 ## Running
 
-After connecting to your Jetson via the hotspot, go into the "VMC" directory, and run
-the command `./start.py run`:
+After connecting to your Jetson via the hotspot, run the command `./start.py run`:
 
 ```bash
-cd ~/AVR-2022/VMC/
 ./start.py run
 ```
 
@@ -153,14 +150,14 @@ Example output:
 
 ```text
 Needing sudo privileges to run docker, re-launching
-Running command: docker-compose --project-name AVR-2022 --file /tmp/docker-compose-v5eqlg13.yml up --remove-orphans --force-recreate pcm
+Running command: docker-compose --project-name AVR --file /home/avr/AVR-VMC/docker-compose.yml up --remove-orphans --force-recreate pcm
 /usr/local/lib/python3.6/dist-packages/paramiko/transport.py:33: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography and will be removed in a future release.
   from cryptography.hazmat.backends import default_backend
-Creating network "avr-2022_default" with the default driver
-Creating avr-2022_mqtt_1 ... done
-Creating avr-2022_pcm_1  ... error
+Creating network "avr_default" with the default driver
+Creating avr_mqtt_1 ... done
+Creating avr_pcm_1  ... error
 
-ERROR: for avr-2022_pcm_1  Cannot start service pcm: error gathering device information while adding custom device "/dev/ttyACM0": no such file or directory
+ERROR: for avr_pcm_1  Cannot start service pcm: error gathering device information while adding custom device "/dev/ttyACM0": no such file or directory
 
 ERROR: for pcm  Cannot start service pcm: error gathering device information while adding custom device "/dev/ttyACM0": no such file or directory
 ERROR: Encountered errors while bringing up the project.
