@@ -13,7 +13,6 @@
   },
   "devDependencies": {
     "markdownlint-cli": "^0.32.2",
-    "npm-check-updates": "^16.6.2",
     "open-cli": "^7.1.0",
     "pre-commit": "^1.2.2",
     "prettier": "^2.8.1"
@@ -24,7 +23,6 @@
     "format:check": "prettier --check content/",
     "lint": "markdownlint content/",
     "server": "open-cli http://localhost:1313 && hugo server -p 1313",
-    "update": "ncu --upgrade && npm install",
     "spellcheck": "cspell \"content/**/*.md\""
   },
   "cspell": {
