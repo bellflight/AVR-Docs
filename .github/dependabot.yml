@@ -5,11 +5,11 @@ updates:
     directory: "/"
     schedule:
       interval: "monthly"
-    target-branch: "docs"
+    target-branch: "main"
 
   # Maintain dependencies for npm
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "monthly"
-    target-branch: "docs"
+    target-branch: "main"
