@@ -1,7 +1,7 @@
 const assert = require("assert");
 const cheerio = require("cheerio");
 const fs = require("fs");
-const glob = require("glob");
+const {globSync} = require("glob");
 const path = require("path");
 const request = require("sync-request");
 const toml = require("toml");
@@ -55,7 +55,7 @@ function main() {
     }
 
     // iterate through each html file in the public folder
-    glob.sync("public/**/*.html").forEach((html_file) => {
+    globSync("public/**/*.html").forEach((html_file) => {
         console.log(`Processing file ${html_file}`);
 
         // open the html file and parse it
