@@ -3,7 +3,7 @@ title: "Python"
 weight: 2
 ---
 
-Python is a general purpose programing language. Being one of the most popular
+Python is a general purpose programming language. Being one of the most popular
 programming languages in the world, Python is known for readability and accessability.
 This section will walk you through installing Python and testing it on your machine.
 

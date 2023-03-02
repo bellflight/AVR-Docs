@@ -2,7 +2,7 @@
   "dependencies": {
     "autoprefixer": "^10.4.13",
     "cheerio": "^1.0.0-rc.12",
-    "cspell": "^6.20.1",
+    "cspell": "^6.27.0",
     "docsy": "github:google/docsy#v0.6.0",
     "glob": "^8.1.0",
     "hugo-extended": "^0.110.0",
