@@ -224,6 +224,8 @@ file is just a `.csv` file with 3 columns:
 
 Short example:
 
+<!-- cSpell:disable -->
+
 ```csv
 Timestamp,Topic,Payload
 2022-05-15T16:05:21.861220,avr/fcm/location/local,"{""dX"": -2.5455074310302734, ""dY"": -1.5015729665756226, ""dZ"": 2.0492169857025146, ""timestamp"": ""2022-05-15T18:43:51.529153""}"
@@ -241,6 +243,8 @@ Timestamp,Topic,Payload
 2022-05-15T16:05:21.915277,avr/vio/velocity/ned,"{""n"": 0.006583199572207324, ""e"": -0.020817144593196127, ""d"": 0.02579902535054221}"
 2022-05-15T16:05:21.915846,avr/vio/confidence,"{""tracker"": 41}"
 ```
+
+<!-- cSpell:enable -->
 
 To stop recording, click the "Stop recording" button. This will stop writing to the log
 file.

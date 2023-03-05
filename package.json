@@ -2,10 +2,10 @@
   "dependencies": {
     "autoprefixer": "^10.4.13",
     "cheerio": "^1.0.0-rc.12",
-    "cspell": "^6.27.0",
+    "cspell": "^6.28.0",
     "docsy": "github:google/docsy#v0.6.0",
-    "glob": "^9.1.2",
-    "hugo-extended": "^0.110.0",
+    "glob": "^9.2.1",
+    "hugo-extended": "^0.111.1",
     "postcss": "^8.4.21",
     "postcss-cli": "^10.1.0",
     "sync-request": "^6.1.0",
