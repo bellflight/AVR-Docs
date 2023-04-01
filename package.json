@@ -5,7 +5,7 @@
     "cspell": "^6.28.0",
     "docsy": "github:google/docsy#v0.6.0",
     "glob": "^9.2.1",
-    "hugo-extended": "^0.111.1",
+    "hugo-extended": "^0.111.3",
     "postcss": "^8.4.21",
     "postcss-cli": "^10.1.0",
     "sync-request": "^6.1.0",
