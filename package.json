@@ -4,7 +4,7 @@
     "cheerio": "^1.0.0-rc.12",
     "cspell": "^6.31.1",
     "docsy": "github:google/docsy#v0.6.0",
-    "glob": "^9.2.1",
+    "glob": "^9.3.2",
     "hugo-extended": "^0.111.3",
     "postcss": "^8.4.21",
     "postcss-cli": "^10.1.0",
