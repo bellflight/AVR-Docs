@@ -20,7 +20,8 @@
     });
 </script>
 
-{{ $glightbox_js := resources.Get "glightbox/src/js/glightbox.js" | js.Build "js/glightbox.js" | resources.Minify | resources.Fingerprint }}
+{{ $glightbox_js := resources.Get "glightbox/dist/js/glightbox.js" }}
+{{ $glightbox_js := slice $glightbox_js | resources.Concat "js/glightbox.js" | resources.Fingerprint }}
 <script type="text/javascript" src="{{ $glightbox_js.RelPermalink }}" integrity="{{ $glightbox_js.Data.Integrity }}"></script>
 
 <script type="text/javascript">
