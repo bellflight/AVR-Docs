@@ -36,9 +36,9 @@ pygmentsStyle = "monokai"
 
 # Image processing configuration.
 [imaging]
-    resampleFilter = "CatmullRom"
-    quality        = 75
-    anchor         = "smart"
+    resampleFilter = "catmullRom"
+    quality        = 90
+    anchor         = "Smart"
 
 [outputs]
     home    = ["HTML", "print"]

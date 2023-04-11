@@ -46,7 +46,7 @@ function local_tags(base_url, soup) {
 
 function main() {
     // read the toml config
-    var config = toml.parse(fs.readFileSync("config.toml"), "utf8");
+    var config = toml.parse(fs.readFileSync("hugo.toml"), "utf8");
     var base_url = config.baseURL;
 
     if (process.env.HUGO_BASEURL) {
