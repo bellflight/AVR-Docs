@@ -4,6 +4,7 @@
     "cheerio": "^1.0.0-rc.12",
     "cspell": "^6.31.1",
     "docsy": "github:google/docsy#v0.6.0",
+    "glightbox": "^3.2.0",
     "glob": "^10.0.0",
     "hugo-extended": "^0.111.3",
     "patch-package": "^6.5.1",
@@ -19,7 +20,7 @@
     "prettier": "^2.8.7"
   },
   "scripts": {
-    "build": "hugo --cleanDestinationDir --minify --verbose && node postprocess.js",
+    "build": "hugo --cleanDestinationDir --minify --verbose",
     "format": "prettier --write content/",
     "format:check": "prettier --check content/",
     "lint": "markdownlint content/",

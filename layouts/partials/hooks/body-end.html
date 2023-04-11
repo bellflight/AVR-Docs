@@ -20,10 +20,8 @@
     });
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"
-    integrity="sha384-Lcg6/G/AHqVn603GN2UHyiIV/TPsuh4QkJNKsdCAUmzbItQ9oSceVj00Zf5tM0EG"
-    crossorigin="anonymous">
-</script>
+{{ $glightbox_js := resources.Get "glightbox/src/js/glightbox.js" | js.Build "js/glightbox.js" | resources.Minify | resources.Fingerprint }}
+<script type="text/javascript" src="{{ $glightbox_js.RelPermalink }}" integrity="{{ $glightbox_js.Data.Integrity }}"></script>
 
 <script type="text/javascript">
     lightbox = GLightbox({});

@@ -34,6 +34,20 @@ pygmentsStyle = "monokai"
 [markup.goldmark.renderer]
     unsafe = true
 
+# Allows us to import code from node_modules in Resources
+[module]
+  [[module.mounts]]
+    source = "assets/"
+    target = "assets/"
+
+  [[module.mounts]]
+    source = "static/"
+    target = "static/"
+
+  [[module.mounts]]
+    source = "node_modules/glightbox"
+    target = "assets/glightbox"
+
 # Image processing configuration.
 [imaging]
     resampleFilter = "catmullRom"

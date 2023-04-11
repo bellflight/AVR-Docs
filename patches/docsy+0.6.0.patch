@@ -1,3 +1,46 @@
+diff --git a/node_modules/docsy/layouts/partials/head-css.html b/node_modules/docsy/layouts/partials/head-css.html
+index d217831..c534431 100644
+--- a/node_modules/docsy/layouts/partials/head-css.html
++++ b/node_modules/docsy/layouts/partials/head-css.html
+@@ -2,10 +2,10 @@
+ {{ $scssMain := "scss/main.scss"}}
+ {{ if not hugo.IsProduction }}
+ {{/* Note the missing postCSS. This makes it snappier to develop in Chrome, but makes it look sub-optimal in other browsers. */}}
+-{{ $css := resources.Get $scssMain | toCSS (dict "enableSourceMap" true) }}
++{{ $css := resources.Get $scssMain | toCSS (dict "enableSourceMap" true "targetPath" "css/main.css") }}
+ <link href="{{ $css.RelPermalink }}" rel="stylesheet">
+ {{ else }}
+-{{ $css := resources.Get $scssMain | toCSS (dict "enableSourceMap" false) | postCSS | minify | fingerprint }}
++{{ $css := resources.Get $scssMain | toCSS (dict "enableSourceMap" false "targetPath" "css/main.css") | postCSS | minify | fingerprint }}
+ <link rel="preload" href="{{ $css.RelPermalink }}" as="style">
+ <link href="{{ $css.RelPermalink }}" rel="stylesheet" integrity="{{ $css.Data.integrity }}">
+ {{ end }}
+diff --git a/node_modules/docsy/layouts/partials/head.html b/node_modules/docsy/layouts/partials/head.html
+index e6ae692..1a58f88 100644
+--- a/node_modules/docsy/layouts/partials/head.html
++++ b/node_modules/docsy/layouts/partials/head.html
+@@ -26,14 +26,17 @@
+ {{ template "_internal/schema.html" . -}}
+ {{ template "_internal/twitter_cards.html" . -}}
+ {{ partialCached "head-css.html" . "asdf" -}}
++
++{{ $jquery := resources.GetRemote "https://code.jquery.com/jquery-3.6.0.min.js" | js.Build "js/jquery-3.6.0.js" | resources.Minify | resources.Fingerprint }}
+ <script
+-  src="https://code.jquery.com/jquery-3.6.0.min.js"
+-  integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
++  src="{{ $jquery.RelPermalink }}"
++  integrity="{{ $jquery.Data.Integrity }}"
+   crossorigin="anonymous"></script>
+ {{ if .Site.Params.offlineSearch -}}
++{{ $lunr := resources.GetRemote "https://unpkg.com/lunr@2.3.9/lunr.min.js" | js.Build "js/lunr-2.3.9.js" | resources.Minify | resources.Fingerprint }}
+ <script defer
+-  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+-  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
++  src="{{ $lunr.RelPermalink }}"
++  integrity="{{ $lunr.Data.Integrity }}"
+   crossorigin="anonymous"></script>
+ {{ end -}}
+ 
 diff --git a/node_modules/docsy/layouts/partials/page-meta-lastmod.html b/node_modules/docsy/layouts/partials/page-meta-lastmod.html
 index 091415a..d2235ca 100644
 --- a/node_modules/docsy/layouts/partials/page-meta-lastmod.html
