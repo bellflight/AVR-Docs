@@ -1,18 +1,44 @@
-<!-- Makes URL absolute if not -->
-{{ $image_url := "" }}
-{{ if or ( hasPrefix .Destination "/" ) ( hasPrefix .Destination "http" ) }}
-    {{ $image_url = .Destination | safeURL }}
-{{ else }}
-    <!-- Hugo lower-cases page slugs. Modify file path to match. -->
-    {{ $image_url = printf "%s%s%s" ("/") (lower (replace .Page.File.Dir "\\" "/")) (.Destination | safeURL) }}
+{{ $image := .Page.Resources.Get .Destination }}
+{{/*  {{ $image_webp := false }}  */}}
+{{/*  {{ $image_fit := false }}  */}}
+
+{{/*  In the case the page didn't have the resource, check the parent
+https://discourse.gohugo.io/t/loading-a-page-resources-within-a-page-markdown-page-resource/35195/2
+Not sure why this works, but.... it does */}}
+{{ if not $image }}
+    {{ $image := .Page.Parent.Resources.Get .Destination }}
 {{ end }}
 
-<!-- If the site base URL is not blank or a single slash, prefix that -->
-{{ if and (ne site.BaseURL "/") (ne site.BaseURL "") }}
-    {{ $image_url = printf "%s%s" (site.BaseURL) ($image_url) }}
+{{ if not $image }}
+    {{ errorf "Image %q not found on page %q" .Destination .Page }}
 {{ end }}
 
-<img loading="lazy" class="glightbox" src="{{ $image_url }}" alt="{{ .Text }}">
+{{/*  Can't convert or resize DrawIO created png files  */}}
+{{/*  {{ if eq (hasSuffix $image.Permalink ".drawio.png") false }}  */}}
+    {{/*  {{ $image_fit = $image.Fit "1000x1000" | resources.Fingerprint }}  */}}
+    {{/*  {{ $image_webp = $image.Fit "1000x1000 webp" | resources.Fingerprint }}  */}}
+{{/*  {{ end }}  */}}
+
+{{/*  {{ $image = $image | resources.Fingerprint }}  */}}
+
+{{/*  {{ if $image_fit }}  */}}
+{{/*  <a href="{{ $image_fit.Permalink }}" class="glightbox" data-title="{{ .Text }}">  */}}
+{{/*  {{ else}}  */}}
+<a href="{{ $image.Permalink }}" class="glightbox" data-title="{{ .Text }}">
+{{/*  {{ end }}  */}}
+<picture>
+    {{/*  {{ if $image_webp }}
+    <source loading="lazy" srcset="{{ $image_webp.Permalink }}" type="image/webp" alt="{{ .Text }}">
+    {{ end }}  */}}
+
+    {{/*  {{ if $image_fit }}  */}}
+    {{/*  <img loading="lazy" src="{{ $image_fit.Permalink }}" alt="{{ .Text }}">  */}}
+    {{/*  {{ else}}  */}}
+    <img loading="lazy" src="{{ $image.Permalink }}" alt="{{ .Text }}">
+    {{/*  {{ end }}  */}}
+</picture>
+</a>
+
 {{ if .Text }}
 <!-- Allow markdown in the subtitle -->
 <p class="glightbox-subtitle">{{ safeHTML .Text }}</p>

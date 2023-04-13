@@ -28,6 +28,9 @@ pygmentsUseClassic = false
 # See https://help.farbox.com/pygments.html
 pygmentsStyle = "monokai"
 
+# increase timeout for image generation
+timeout = "300s"
+
 # Needed for some shortcodes
 [markup]
 [markup.goldmark]

@@ -11,6 +11,7 @@
     "rimraf": "^5.0.0"
   },
   "devDependencies": {
+    "get-folder-size": "^4.0.0",
     "markdownlint-cli": "^0.33.0",
     "open-cli": "^7.2.0",
     "pre-commit": "^1.2.2",
@@ -24,7 +25,8 @@
     "server": "open-cli http://localhost:1313 && hugo server -p 1313",
     "spellcheck": "cspell \"content/**/*.md\"",
     "postinstall": "patch-package",
-    "make-patch": "patch-package docsy"
+    "make-patch": "patch-package docsy",
+    "check-size": "node check-size.js"
   },
   "cspell": {
     "dictionaries": [
@@ -44,5 +46,6 @@
   "pre-commit": [
     "spellcheck",
     "format:check"
-  ]
+  ],
+  "type": "module"
 }

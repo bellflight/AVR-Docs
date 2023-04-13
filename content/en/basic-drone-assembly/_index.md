@@ -23,6 +23,6 @@ A simple block diagram can be used to represent the components of the basic dron
 you move throughout this documentation keep these details in mind. It will help you gain
 a high-level understanding of what we're trying to accomplish.
 
-![Block diagram of basic drone components](avr_block_diagram.png)
+![Block diagram of basic drone components](avr_block_diagram.drawio.png)
 
 Let's get started with assembly!

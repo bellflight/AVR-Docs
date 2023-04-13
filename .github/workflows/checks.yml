@@ -9,7 +9,7 @@ on:
 jobs:
   checks:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, 'ci skip')"
+    if: "${{ !contains(github.event.head_commit.message, 'ci skip') }}"
 
     steps:
       - name: Checkout Code
@@ -20,6 +20,14 @@ jobs:
         with:
           node-version-file: ".node-version"
           cache: npm
+
+      - name: Cache Hugo Resources
+        uses: actions/cache@v3
+        with:
+          path: resources/
+          key: hugo-resources-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            hugo-resources-
 
       - name: Install Dependencies
         run: npm install
@@ -32,3 +40,6 @@ jobs:
 
       - name: Build Site
         run: npm run build
+
+      - name: Check Size
+        run: npm run check-size

@@ -1,2 +1,3 @@
-{{ $glightbox_css := resources.Get "glightbox/src/postcss/glightbox.css" | resources.ToCSS (dict "targetPath" "css/glightbox.css" "outputStyle" "compressed" "enableSourceMap" true "precision" 6) | resources.Fingerprint }}
+{{ $glightbox_css := resources.Get "glightbox/dist/css/glightbox.min.css" }}
+{{ $glightbox_css := slice $glightbox_css | resources.Concat "css/glightbox.css" | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $glightbox_css.RelPermalink }}" />
