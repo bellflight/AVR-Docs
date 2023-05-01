@@ -15,7 +15,7 @@
     "markdownlint-cli": "^0.33.0",
     "open-cli": "^7.2.0",
     "pre-commit": "^1.2.2",
-    "prettier": "^2.8.7"
+    "prettier": "^2.8.8"
   },
   "scripts": {
     "build": "hugo --cleanDestinationDir --minify --verbose && rimraf public/favicons/",
