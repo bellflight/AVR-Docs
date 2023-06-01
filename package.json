@@ -4,7 +4,7 @@
     "cspell": "^6.31.1",
     "docsy": "github:google/docsy#v0.6.0",
     "glightbox": "^3.2.0",
-    "hugo-extended": "^0.111.3",
+    "hugo-extended": "^0.112.3",
     "patch-package": "^7.0.0",
     "postcss": "^8.4.24",
     "postcss-cli": "^10.1.0",
