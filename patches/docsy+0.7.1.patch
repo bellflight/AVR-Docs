@@ -213,3 +213,16 @@ index 0e90cc9..d532117 100644
    {{ $newPageStub := resources.Get "stubs/new-page-template.md" -}}
    {{ $newPageQS := querify "value" $newPageStub.Content "filename" "change-me.md" | safeURL -}}
    {{ $newPageURL := printf "%s/new/%s?%s"  $gh_repo $gh_repo_path $newPageQS -}}
+diff --git a/node_modules/docsy/layouts/shortcodes/alert.html b/node_modules/docsy/layouts/shortcodes/alert.html
+index 12804b7..300b58d 100644
+--- a/node_modules/docsy/layouts/shortcodes/alert.html
++++ b/node_modules/docsy/layouts/shortcodes/alert.html
+@@ -3,7 +3,7 @@
+ <div class="alert alert-{{ $color }}" role="alert">
+ {{ with .Get "title" }}<h4 class="alert-heading">{{ . | safeHTML }}</h4>{{ end }}
+ {{ if eq .Page.File.Ext "md" }}
+-    {{ .Inner | markdownify }}
++    {{ .Inner }}
+ {{ else }}
+     {{ .Inner | htmlUnescape | safeHTML }}
+ {{ end }}
