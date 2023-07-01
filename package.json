@@ -2,9 +2,9 @@
   "dependencies": {
     "autoprefixer": "^10.4.14",
     "cspell": "^6.31.1",
-    "docsy": "github:google/docsy#v0.6.0",
+    "docsy": "github:google/docsy#v0.7.1",
     "glightbox": "^3.2.0",
-    "hugo-extended": "^0.112.3",
+    "hugo-extended": "^0.113.0",
     "patch-package": "^7.0.0",
     "postcss": "^8.4.24",
     "postcss-cli": "^10.1.0",
@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "get-folder-size": "^4.0.0",
-    "markdownlint-cli": "^0.34.0",
+    "markdownlint-cli": "^0.35.0",
     "open-cli": "^7.2.0",
     "pre-commit": "^1.2.2",
     "prettier": "^2.8.8"

@@ -1,0 +1,9 @@
+/* This file is needed because it is imported after bootstrap */
+
+$theme-colors: map-merge(
+  $theme-colors,
+  (
+    "tip": #998542,
+    "note": $info,
+  )
+);

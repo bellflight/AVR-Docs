@@ -98,6 +98,11 @@ timeout = "300s"
     # Enable syntax highlighting and copy buttons on code blocks with Prism
     prism_syntax_highlighting = false
 
+[params.drawio]
+    # enable drawio integration
+    # https://github.com/google/docsy/issues/1185
+    enable = true
+
 # User interface configuration
 [params.ui]
     # Set to true to disable breadcrumb navigation.
