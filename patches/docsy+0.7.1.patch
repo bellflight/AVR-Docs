@@ -1,3 +1,24 @@
+diff --git a/node_modules/docsy/assets/scss/_theme_colors.scss b/node_modules/docsy/assets/scss/_theme_colors.scss
+new file mode 100644
+index 0000000..7068cde
+--- /dev/null
++++ b/node_modules/docsy/assets/scss/_theme_colors.scss
+@@ -0,0 +1 @@
++/**/
+\ No newline at end of file
+diff --git a/node_modules/docsy/assets/scss/main.scss b/node_modules/docsy/assets/scss/main.scss
+index 84bf687..129777d 100644
+--- a/node_modules/docsy/assets/scss/main.scss
++++ b/node_modules/docsy/assets/scss/main.scss
+@@ -13,6 +13,8 @@
+ @import "../vendor/Font-Awesome/scss/solid.scss";
+ @import "../vendor/Font-Awesome/scss/brands.scss";
+ 
++@import "theme_colors";
++
+ @import "support/utilities";
+ @import "colors";
+ @import "table";
 diff --git a/node_modules/docsy/layouts/partials/head-css.html b/node_modules/docsy/layouts/partials/head-css.html
 index d217831..c534431 100644
 --- a/node_modules/docsy/layouts/partials/head-css.html
@@ -42,7 +63,7 @@ index 5fb1dd2..6dacc64 100644
 +  integrity="{{ $lunr.Data.Integrity }}"
    crossorigin="anonymous"></script>
  {{ end -}}
-
+ 
 diff --git a/node_modules/docsy/layouts/partials/page-meta-lastmod.html b/node_modules/docsy/layouts/partials/page-meta-lastmod.html
 index 091415a..0b44a1a 100644
 --- a/node_modules/docsy/layouts/partials/page-meta-lastmod.html
@@ -180,7 +201,7 @@ index 0e90cc9..d532117 100644
 @@ -30,9 +30,13 @@
      {{ $gh_repo_path = replaceRE . $ghs_rename $gh_repo_path -}}
    {{ end -}}
-
+ 
 +  {{ $discourse_forums := ($.Param "discourse_forums") -}}
 +  {{ $discourse_forums_category := ($.Param "discourse_forums_category") -}}
 +
@@ -192,10 +213,3 @@ index 0e90cc9..d532117 100644
    {{ $newPageStub := resources.Get "stubs/new-page-template.md" -}}
    {{ $newPageQS := querify "value" $newPageStub.Content "filename" "change-me.md" | safeURL -}}
    {{ $newPageURL := printf "%s/new/%s?%s"  $gh_repo $gh_repo_path $newPageQS -}}
-diff --git a/node_modules/docsy/assets/scss/main.scss b/node_modules/docsy/assets/scss/main.scss
-index 84bf687..31fa6dd 100644
---- a/node_modules/docsy/assets/scss/main.scss
-+++ b/node_modules/docsy/assets/scss/main.scss
-@@ -13,6 +13,8 @@
- @import "../vendor/Font-Awesome/scss/solid.scss";
- @import "../vendor/Font-Awesome/scss/brands.scss";
