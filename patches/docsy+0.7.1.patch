@@ -16,37 +16,35 @@ index d217831..c534431 100644
  <link href="{{ $css.RelPermalink }}" rel="stylesheet" integrity="{{ $css.Data.integrity }}">
  {{ end }}
 diff --git a/node_modules/docsy/layouts/partials/head.html b/node_modules/docsy/layouts/partials/head.html
-index e6ae692..db1326d 100644
+index 5fb1dd2..6dacc64 100644
 --- a/node_modules/docsy/layouts/partials/head.html
 +++ b/node_modules/docsy/layouts/partials/head.html
-@@ -26,15 +26,18 @@
+@@ -26,14 +26,19 @@
  {{ template "_internal/schema.html" . -}}
  {{ template "_internal/twitter_cards.html" . -}}
  {{ partialCached "head-css.html" . "asdf" -}}
 +
-+{{ $jquery := resources.GetRemote "https://code.jquery.com/jquery-3.6.0.min.js" }}
-+{{ $jquery := slice $jquery | resources.Concat "js/jquery-3.6.0.min.js" | resources.Fingerprint }}
++{{ $jquery := resources.GetRemote "https://code.jquery.com/jquery-3.6.3.min.js" }}
++{{ $jquery := slice $jquery | resources.Concat "js/jquery-3.6.3.min.js" | resources.Fingerprint }}
  <script
--  src="https://code.jquery.com/jquery-3.6.0.min.js"
--  integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
--  crossorigin="anonymous"></script>
+-  src="https://code.jquery.com/jquery-3.6.3.min.js"
+-  integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
 +  src="{{ $jquery.RelPermalink }}"
 +  integrity="{{ $jquery.Data.Integrity }}"
-+  crossorigin="anonymous">
-+</script>
+   crossorigin="anonymous"></script>
  {{ if .Site.Params.offlineSearch -}}
--<script defer
--  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
--  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
--  crossorigin="anonymous"></script>
 +{{ $lunr := resources.GetRemote "https://unpkg.com/lunr@2.3.9/lunr.min.js" }}
 +{{ $lunr := slice $lunr | resources.Concat "js/lunr-2.3.9.min.js" | resources.Fingerprint }}
-+<script defer src="{{ $lunr.RelPermalink }}" integrity="{{ $lunr.Data.Integrity }}"></script>
+ <script defer
+-  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+-  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
++  src="{{ $lunr.RelPermalink }}"
++  integrity="{{ $lunr.Data.Integrity }}"
+   crossorigin="anonymous"></script>
  {{ end -}}
  
- {{ if .Site.Params.prism_syntax_highlighting -}}
 diff --git a/node_modules/docsy/layouts/partials/page-meta-lastmod.html b/node_modules/docsy/layouts/partials/page-meta-lastmod.html
-index 091415a..d2235ca 100644
+index 091415a..0b44a1a 100644
 --- a/node_modules/docsy/layouts/partials/page-meta-lastmod.html
 +++ b/node_modules/docsy/layouts/partials/page-meta-lastmod.html
 @@ -1,3 +1,125 @@
@@ -176,16 +174,10 @@ index 091415a..d2235ca 100644
  <div class="text-muted mt-5 pt-3 border-top">
    {{ T "post_last_mod" }} {{ .Lastmod.Format .Site.Params.time_format_default -}}
 diff --git a/node_modules/docsy/layouts/partials/page-meta-links.html b/node_modules/docsy/layouts/partials/page-meta-links.html
-index e3561eb..6ef4cbc 100644
+index 0e90cc9..d532117 100644
 --- a/node_modules/docsy/layouts/partials/page-meta-links.html
 +++ b/node_modules/docsy/layouts/partials/page-meta-links.html
-@@ -1,3 +1,5 @@
-+{{/* The default partial, with a small change to the issue URL */}}
-+
- {{ if .File }}
- {{ $pathFormatted := replace .File.Path "\\" "/" -}}
- {{ $gh_repo := ($.Param "github_repo") -}}
-@@ -30,9 +32,13 @@
+@@ -30,9 +30,13 @@
      {{ $gh_repo_path = replaceRE . $ghs_rename $gh_repo_path -}}
    {{ end -}}
  
