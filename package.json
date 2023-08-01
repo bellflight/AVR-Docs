@@ -1,12 +1,12 @@
 {
   "dependencies": {
     "autoprefixer": "^10.4.14",
-    "cspell": "^6.31.1",
+    "cspell": "^6.31.2",
     "docsy": "github:google/docsy#v0.7.1",
     "glightbox": "^3.2.0",
-    "hugo-extended": "^0.113.0",
-    "patch-package": "^7.0.0",
-    "postcss": "^8.4.24",
+    "hugo-extended": "^0.115.4",
+    "patch-package": "^8.0.0",
+    "postcss": "^8.4.27",
     "postcss-cli": "^10.1.0",
     "rimraf": "^5.0.1"
   },
@@ -15,7 +15,7 @@
     "markdownlint-cli": "^0.35.0",
     "open-cli": "^7.2.0",
     "pre-commit": "^1.2.2",
-    "prettier": "^2.8.8"
+    "prettier": "^3.0.0"
   },
   "scripts": {
     "build": "hugo --cleanDestinationDir --minify --verbose && rimraf public/favicons/",
