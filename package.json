@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "autoprefixer": "^10.4.16",
-    "cspell": "^7.3.7",
+    "cspell": "^7.3.8",
     "docsy": "github:google/docsy#v0.7.1",
     "glightbox": "^3.2.0",
     "hugo-extended": "^0.119.0",
