@@ -43,5 +43,8 @@ if __name__ == "__main__":
         )
 
     # ignore new file
-    with open(os.path.join(THIS_DIR, ".git", "modules", "themes", "docsy", "info", "exclude"), "w") as fp:
+    with open(
+        os.path.join(THIS_DIR, ".git", "modules", "themes", "docsy", "info", "exclude"),
+        "w",
+    ) as fp:
         fp.write("assets/scss/_theme_colors.scss\n")
