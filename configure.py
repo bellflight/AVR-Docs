@@ -11,6 +11,7 @@ if __name__ == "__main__":
         ["git", "submodule", "update", "--init", "--recursive", docsy_dir]
     )
     subprocess.check_call(["git", "reset", "--hard"], cwd=docsy_dir)
+    subprocess.check_call(["git", "clean", "-f"], cwd=docsy_dir)
     subprocess.check_call(
         [
             "git",
@@ -21,12 +22,14 @@ if __name__ == "__main__":
         ],
         cwd=docsy_dir,
     )
-    subprocess.check_call(
-        [
-            "git",
-            "update-index",
-            "--assume-unchanged",
-            ".",
-        ],
-        cwd=docsy_dir,
-    )
+
+    for root, dirs, files in os.walk(docsy_dir):
+        for file_ in files:
+            subprocess.check_call(
+                [
+                    "git",
+                    "update-index",
+                    "--assume-unchanged",
+                    os.path.join(root, file_),
+                ]
+            )
