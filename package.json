@@ -2,10 +2,9 @@
   "dependencies": {
     "autoprefixer": "^10.4.16",
     "cspell": "^8.0.0",
-    "docsy": "github:google/docsy#v0.8.0",
+    "docsy": "github:google/docsy#v0.7.1",
     "glightbox": "^3.2.0",
-    "hugo-extended": "^0.120.4",
-    "patch-package": "^8.0.0",
+    "hugo-extended": "^0.119.0",
     "postcss": "^8.4.31",
     "postcss-cli": "^10.1.0",
     "rimraf": "^5.0.5"
@@ -18,14 +17,14 @@
     "prettier": "^3.1.0"
   },
   "scripts": {
-    "build": "hugo --cleanDestinationDir --minify --verbose && rimraf public/favicons/",
+    "build": "hugo --cleanDestinationDir --minify --logLevel info && rimraf public/favicons/",
     "format": "prettier --write content/",
     "format:check": "prettier --check content/",
     "lint": "markdownlint content/",
     "server": "open-cli http://localhost:1313 && hugo server -p 1313",
     "spellcheck": "cspell \"content/**/*.md\"",
-    "postinstall": "patch-package",
-    "make-patch": "patch-package docsy",
+    "postinstall": "python configure.py",
+    "make-patch": "cd themes/docsy && git diff > ../doscy.patch",
     "check-size": "node check-size.js"
   },
   "cspell": {

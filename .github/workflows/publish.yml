@@ -26,27 +26,11 @@ jobs:
         id: pages
         uses: actions/configure-pages@v3
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: ".node-version"
-          cache: npm
-
-      - name: Cache Hugo Resources
-        uses: actions/cache@v3
-        with:
-          path: resources/
-          key: hugo-resources-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            hugo-resources-
-
-      - name: Install Dependencies
-        run: npm install
-
       - name: Build Site
-        run: npm run build
-        env:
-          HUGO_BASEURL: ${{ steps.pages.outputs.base_url }}
+        uses: devcontainers/ci@v0.3
+        with:
+          runCmd: npm run build
+          env: HUGO_BASEURL=${{ steps.pages.outputs.base_url }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2

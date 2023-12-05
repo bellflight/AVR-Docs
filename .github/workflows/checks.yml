@@ -15,31 +15,23 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: ".node-version"
-          cache: npm
-
-      - name: Cache Hugo Resources
-        uses: actions/cache@v3
-        with:
-          path: resources/
-          key: hugo-resources-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            hugo-resources-
-
-      - name: Install Dependencies
-        run: npm install
-
       - name: Check Spelling
-        run: npm run spellcheck
+        uses: devcontainers/ci@v0.2
+        with:
+          runCmd: npm run spellcheck
 
       - name: Check Formatting
-        run: npm run format:check
+        uses: devcontainers/ci@v0.2
+        with:
+          runCmd: npm run format:check
 
       - name: Build Site
-        run: npm run build
+        uses: devcontainers/ci@v0.2
+        with:
+          runCmd: npm run build
 
       - name: Check Size
-        run: npm run check-size
+        uses: devcontainers/ci@v0.2
+        with:
+          runCmd: npm run check-size
+

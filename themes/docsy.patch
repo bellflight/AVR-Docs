@@ -1,0 +1,228 @@
+diff --git a/node_modules/docsy/assets/scss/_theme_colors.scss b/node_modules/docsy/assets/scss/_theme_colors.scss
+new file mode 100644
+index 0000000..7068cde
+--- /dev/null
++++ b/node_modules/docsy/assets/scss/_theme_colors.scss
+@@ -0,0 +1 @@
++/**/
+\ No newline at end of file
+diff --git a/node_modules/docsy/assets/scss/main.scss b/node_modules/docsy/assets/scss/main.scss
+index 3e81ecc..ec8d497 100644
+--- a/node_modules/docsy/assets/scss/main.scss
++++ b/node_modules/docsy/assets/scss/main.scss
+@@ -12,6 +12,8 @@
+ @import "../vendor/Font-Awesome/scss/solid.scss";
+ @import "../vendor/Font-Awesome/scss/brands.scss";
+ 
++@import "theme_colors";
++
+ @import "support/utilities";
+ @import "colors";
+ @import "table";
+diff --git a/node_modules/docsy/layouts/partials/head-css.html b/node_modules/docsy/layouts/partials/head-css.html
+index d217831..c534431 100644
+--- a/node_modules/docsy/layouts/partials/head-css.html
++++ b/node_modules/docsy/layouts/partials/head-css.html
+@@ -2,10 +2,10 @@
+ {{ $scssMain := "scss/main.scss"}}
+ {{ if not hugo.IsProduction }}
+ {{/* Note the missing postCSS. This makes it snappier to develop in Chrome, but makes it look sub-optimal in other browsers. */}}
+-{{ $css := resources.Get $scssMain | toCSS (dict "enableSourceMap" true) }}
++{{ $css := resources.Get $scssMain | toCSS (dict "enableSourceMap" true "targetPath" "css/main.css") }}
+ <link href="{{ $css.RelPermalink }}" rel="stylesheet">
+ {{ else }}
+-{{ $css := resources.Get $scssMain | toCSS (dict "enableSourceMap" false) | postCSS | minify | fingerprint }}
++{{ $css := resources.Get $scssMain | toCSS (dict "enableSourceMap" false "targetPath" "css/main.css") | postCSS | minify | fingerprint }}
+ <link rel="preload" href="{{ $css.RelPermalink }}" as="style">
+ <link href="{{ $css.RelPermalink }}" rel="stylesheet" integrity="{{ $css.Data.integrity }}">
+ {{ end }}
+diff --git a/node_modules/docsy/layouts/partials/head.html b/node_modules/docsy/layouts/partials/head.html
+index 6db9257..c4c149c 100644
+--- a/node_modules/docsy/layouts/partials/head.html
++++ b/node_modules/docsy/layouts/partials/head.html
+@@ -25,14 +25,19 @@
+ {{ template "_internal/schema.html" . -}}
+ {{ template "_internal/twitter_cards.html" . -}}
+ {{ partialCached "head-css.html" . "asdf" -}}
++
++{{ $jquery := resources.GetRemote "https://code.jquery.com/jquery-3.6.3.min.js" }}
++{{ $jquery := slice $jquery | resources.Concat "js/jquery-3.6.3.min.js" | resources.Fingerprint }}
+ <script
+-  src="https://code.jquery.com/jquery-3.6.3.min.js"
+-  integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
++  src="{{ $jquery.RelPermalink }}"
++  integrity="{{ $jquery.Data.Integrity }}"
+   crossorigin="anonymous"></script>
+ {{ if .Site.Params.offlineSearch -}}
++{{ $lunr := resources.GetRemote "https://unpkg.com/lunr@2.3.9/lunr.min.js" }}
++{{ $lunr := slice $lunr | resources.Concat "js/lunr-2.3.9.min.js" | resources.Fingerprint }}
+ <script defer
+-  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+-  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
++  src="{{ $lunr.RelPermalink }}"
++  integrity="{{ $lunr.Data.Integrity }}"
+   crossorigin="anonymous"></script>
+ {{ end -}}
+ 
+diff --git a/node_modules/docsy/layouts/partials/page-meta-lastmod.html b/node_modules/docsy/layouts/partials/page-meta-lastmod.html
+index 091415a..0b44a1a 100644
+--- a/node_modules/docsy/layouts/partials/page-meta-lastmod.html
++++ b/node_modules/docsy/layouts/partials/page-meta-lastmod.html
+@@ -1,3 +1,125 @@
++{{$level := newScratch }}
++{{ if (eq .Page.Weight 0) }}
++ {{$level.Set "level" 1}}
++  {{$level.Set "sections" .Page.Sections}}
++   {{$level.Set "weight" 0}}
++    {{ else }}
++     {{ if (eq .Page.Parent.Weight 0) }}
++      {{$level.Set "level" 2}}
++       {{$level.Set "sections" .Page.Sections}}
++{{$level.Set "weight" .Page.Weight}}
++{{ else }}
++{{ if (eq .Page.Parent.Parent.Weight 0) }}
++ {{$level.Set "level" 3}}
++  {{$level.Set "sections" .Page.Parent.Sections}}
++   {{$level.Set "weight" .Page.Weight}}
++   {{ else }}
++   {{$level.Set "level" 3}}
++   {{$level.Set "sections" .Page.Parent.Sections}}
++    {{$level.Set "weight" .Page.Weight}}
++    {{ end }}
++     {{ end }}
++      {{ end }}
++
++{{$levelPerm := $level.Get "level"}}
++{{$levelSections := $level.Get "sections"}}
++{{$levelWeight := $level.Get "weight"}}
++ {{$levelNext := $level.Get "weight"}}
++  {{$level.Set "success" 0}}
++   {{$level.Set "prevsuccess" 0}}
++{{$level.Set "success" 0}}
++{{$level.Set "prevsuccess" 0}}
++
++<br>
++
++{{ if (eq $levelPerm 3)  }}
++  {{$weightParent:= .Page.Parent.Weight}}
++  {{ range $levelSections }}
++      {{if (eq .Weight (add $levelWeight -1))}}
++          <a class="btn btn-primary" title = "Previous" href="{{ .Permalink }}" style="float: left;"><span class="mr-1">←</span>{{ T "ui_pager_prev" }}</a>
++          {{$level.Set "prevsuccess" 1}}
++      {{ end }}
++  {{ end }}
++  {{if (eq 0 ($level.Get "prevsuccess"))}}
++      <a class="btn btn-primary" title = "Previous" href="{{  .Page.Parent.Permalink}}" style="float: left;"><span class="mr-1">←</span>{{ T "ui_pager_prev" }}</a>
++  {{ end }}
++  {{ range $levelSections }}
++      {{if (eq .Weight (add $levelWeight 1))}}
++          <a class="btn btn-primary" title = "Next"  href="{{ .Permalink }}" style="float: right;">{{ T "ui_pager_next" }}<span class="ml-1">→</span></a>
++          {{$level.Set "success" 1}}
++      {{ end }}
++  {{ end }}
++  {{ range .Page.Parent.Parent.Sections }}
++      {{if (eq 0 ($level.Get "success"))}}
++          {{if (eq .Weight (add $weightParent 1))}}
++              <a class="btn btn-primary" title = "Next" href="{{ .Permalink }}" style="float: right;">{{ T "ui_pager_next" }}<span class="ml-1">→</span></a>
++              {{$level.Set "success" 1}}
++          {{ end }}
++      {{ end }}
++  {{ end }}
++
++  {{$weightParent := .Page.Parent.Weight}}
++  {{ range .Page.Sections }}
++      {{if (eq .Weight 1)}}
++          <a class="btn btn-primary" title = "Next" href="{{ .Permalink }}" style="float: right;">{{ T "ui_pager_next" }}<span class="ml-1">→</span></a>
++          {{$level.Set "success" 1}}
++      {{ end }}
++  {{ end }}
++  {{if (eq 0 ($level.Get "success"))}}
++      {{ range .Page.Parent.Sections }}
++      {{if (eq .Weight (add $levelWeight 1))}}
++          <a class="btn btn-primary" title = "Next" href="{{ .Permalink }}" style="float: right;">{{ T "ui_pager_next" }}<span class="ml-1">→</span></a>
++          {{$level.Set "success" 1}}
++      {{ end }}
++      {{ end }}
++      {{ end }}
++
++{{ end }}
++{{$level.Set "success" 0}}
++{{ if (eq $levelPerm 2) }}
++  {{$weightParent := .Page.Parent.Weight}}
++  {{ range .Page.Parent.Sections }}
++      {{if (eq .Weight (add $levelWeight -1))}}
++          {{ range .Sections }}
++               {{$level.Set "lastpage" .Permalink}}
++          {{end}}
++          {{$lastpage := $level.Get "lastpage"}}
++          <a class="btn btn-primary" title = "Previous" href="{{ $lastpage }}" style="float: left;"><span class="mr-1">←</span>{{ T "ui_pager_prev" }}</a>
++          {{$level.Set "success" 1}}
++      {{ end }}
++  {{ end }}
++  {{if (eq 0 ($level.Get "success"))}}
++      {{ range .Page.Sections }}
++           {{if (eq .Weight 1)}}
++              {{$level.Set "lastpage" .Permalink}}
++              {{$lastpage := $level.Get "lastpage"}}
++              <a class="btn btn-primary" title = "Previous" href="{{ $lastpage }}" style="float: left;"><span class="mr-1">←</span>{{ T "ui_pager_prev" }}</a>
++              {{$level.Set "success" 1}}
++          {{ end }}
++      {{ end }}
++  {{ end }}
++{{ end }}
++{{$level.Set "success" 0}}
++{{ if (eq $levelPerm 2) }}
++  {{$weightParent := .Page.Parent.Weight}}
++  {{ range .Page.Sections }}
++      {{if (eq .Weight 1)}}
++          <a class="btn btn-primary" title = "Next" href="{{ .Permalink }}" style="float: right;">{{ T "ui_pager_next" }}<span class="ml-1">→</span></a>
++          {{$level.Set "success" 1}}
++      {{ end }}
++  {{ end }}
++  {{if (eq 0 ($level.Get "success"))}}
++      {{ range .Page.Parent.Sections }}
++      {{if (eq .Weight (add $levelWeight 1))}}
++          <a class="btn btn-primary" title = "Next" href="{{ .Permalink }}" style="float: right;">{{ T "ui_pager_next" }}<span class="ml-1">→</span></a>
++          {{$level.Set "success" 1}}
++      {{ end }}
++  {{ end }}
++{{ end }}
++{{ end }}
++
++<br>
++
+ {{ if and (.GitInfo) (.Site.Params.github_repo) -}}
+ <div class="text-muted mt-5 pt-3 border-top">
+   {{ T "post_last_mod" }} {{ .Lastmod.Format .Site.Params.time_format_default -}}
+diff --git a/node_modules/docsy/layouts/partials/page-meta-links.html b/node_modules/docsy/layouts/partials/page-meta-links.html
+index c8bacf4..f2ae196 100644
+--- a/node_modules/docsy/layouts/partials/page-meta-links.html
++++ b/node_modules/docsy/layouts/partials/page-meta-links.html
+@@ -30,9 +30,13 @@
+     {{ $gh_repo_path = replaceRE . $ghs_rename $gh_repo_path -}}
+   {{ end -}}
+ 
++  {{ $discourse_forums := ($.Param "discourse_forums") -}}
++  {{ $discourse_forums_category := ($.Param "discourse_forums_category") -}}
++
+   {{ $viewURL := printf "%s/tree/%s" $gh_repo $gh_repo_path -}}
+   {{ $editURL := printf "%s/edit/%s" $gh_repo $gh_repo_path -}}
+-  {{ $issuesURL := printf "%s/issues/new?title=%s" $gh_repo (safeURL $.Title ) -}}
++  {{/* https://meta.discourse.org/t/how-to-create-a-new-topic-link-with-pre-filled-information/28074 */}}
++  {{ $issuesURL := printf "%s/new-topic?title=%s+Page&category=%s&body=Source: %s%s" $discourse_forums (urlquery $.Title ) $discourse_forums_category (urlquery $.Permalink) "%0A%0A" -}}
+   {{ $newPageStub := resources.Get "stubs/new-page-template.md" -}}
+   {{ $newPageQS := querify "value" $newPageStub.Content "filename" "change-me.md" | safeURL -}}
+   {{ $newPageURL := printf "%s/new/%s?%s"  $gh_repo (path.Dir $gh_repo_path) $newPageQS -}}
+diff --git a/node_modules/docsy/layouts/shortcodes/alert.html b/node_modules/docsy/layouts/shortcodes/alert.html
+index 12804b7..300b58d 100644
+--- a/node_modules/docsy/layouts/shortcodes/alert.html
++++ b/node_modules/docsy/layouts/shortcodes/alert.html
+@@ -3,7 +3,7 @@
+ <div class="alert alert-{{ $color }}" role="alert">
+ {{ with .Get "title" }}<h4 class="alert-heading">{{ . | safeHTML }}</h4>{{ end }}
+ {{ if eq .Page.File.Ext "md" }}
+-    {{ .Inner | markdownify }}
++    {{ .Inner }}
+ {{ else }}
+     {{ .Inner | htmlUnescape | safeHTML }}
+ {{ end }}
