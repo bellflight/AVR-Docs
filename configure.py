@@ -23,13 +23,25 @@ if __name__ == "__main__":
         cwd=docsy_dir,
     )
 
-    for root, dirs, files in os.walk(docsy_dir):
-        for file_ in files:
-            subprocess.check_call(
-                [
-                    "git",
-                    "update-index",
-                    "--assume-unchanged",
-                    os.path.join(root, file_),
-                ]
-            )
+    # assume unchanged on patched files
+    filenames = [
+        os.path.join("layouts", "partials", "head-css.html"),
+        os.path.join("layouts", "partials", "page-meta-lastmod.html"),
+        os.path.join("layouts", "partials", "page-meta-links.html"),
+        os.path.join("layouts", "shortcodes", "alert.html"),
+        os.path.join("assets", "scss", "main.scss"),
+    ]
+    for filename in filenames:
+        subprocess.check_call(
+            [
+                "git",
+                "update-index",
+                "--assume-unchanged",
+                filename,
+            ],
+            cwd=docsy_dir,
+        )
+
+    # ignore new file
+    with open(os.path.join(THIS_DIR, ".git", "modules", "themes", "docsy", "info", "exclude"), "w") as fp:
+        fp.write("assets/scss/_theme_colors.scss\n")
