@@ -2,7 +2,10 @@
 
 ## Getting Started
 
+**This repository only works on Linux. A DevContainer needs to be used on Windows.**
+
 ```bash
+# not needed in a DevContainer
 git clone https://github.com/bellflight/AVR-Docs
 cd AVR-Docs
 npm install
@@ -26,7 +29,7 @@ Running
 npm install
 ```
 
-will install all of the required dependencies and tools.
+will install all of the required dependencies and tools (not needed in a DevContainer).
 
 To preview the site, run:
 

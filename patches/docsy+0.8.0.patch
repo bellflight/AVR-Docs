@@ -7,13 +7,13 @@ index 0000000..7068cde
 +/**/
 \ No newline at end of file
 diff --git a/node_modules/docsy/assets/scss/main.scss b/node_modules/docsy/assets/scss/main.scss
-index 84bf687..129777d 100644
+index 3e81ecc..ec8d497 100644
 --- a/node_modules/docsy/assets/scss/main.scss
 +++ b/node_modules/docsy/assets/scss/main.scss
-@@ -13,6 +13,8 @@
+@@ -12,6 +12,8 @@
  @import "../vendor/Font-Awesome/scss/solid.scss";
  @import "../vendor/Font-Awesome/scss/brands.scss";
- 
+
 +@import "theme_colors";
 +
  @import "support/utilities";
@@ -37,10 +37,10 @@ index d217831..c534431 100644
  <link href="{{ $css.RelPermalink }}" rel="stylesheet" integrity="{{ $css.Data.integrity }}">
  {{ end }}
 diff --git a/node_modules/docsy/layouts/partials/head.html b/node_modules/docsy/layouts/partials/head.html
-index 5fb1dd2..6dacc64 100644
+index 6db9257..c4c149c 100644
 --- a/node_modules/docsy/layouts/partials/head.html
 +++ b/node_modules/docsy/layouts/partials/head.html
-@@ -26,14 +26,19 @@
+@@ -25,14 +25,19 @@
  {{ template "_internal/schema.html" . -}}
  {{ template "_internal/twitter_cards.html" . -}}
  {{ partialCached "head-css.html" . "asdf" -}}
@@ -63,7 +63,7 @@ index 5fb1dd2..6dacc64 100644
 +  integrity="{{ $lunr.Data.Integrity }}"
    crossorigin="anonymous"></script>
  {{ end -}}
- 
+
 diff --git a/node_modules/docsy/layouts/partials/page-meta-lastmod.html b/node_modules/docsy/layouts/partials/page-meta-lastmod.html
 index 091415a..0b44a1a 100644
 --- a/node_modules/docsy/layouts/partials/page-meta-lastmod.html
@@ -195,13 +195,13 @@ index 091415a..0b44a1a 100644
  <div class="text-muted mt-5 pt-3 border-top">
    {{ T "post_last_mod" }} {{ .Lastmod.Format .Site.Params.time_format_default -}}
 diff --git a/node_modules/docsy/layouts/partials/page-meta-links.html b/node_modules/docsy/layouts/partials/page-meta-links.html
-index 0e90cc9..d532117 100644
+index c8bacf4..f2ae196 100644
 --- a/node_modules/docsy/layouts/partials/page-meta-links.html
 +++ b/node_modules/docsy/layouts/partials/page-meta-links.html
 @@ -30,9 +30,13 @@
      {{ $gh_repo_path = replaceRE . $ghs_rename $gh_repo_path -}}
    {{ end -}}
- 
+
 +  {{ $discourse_forums := ($.Param "discourse_forums") -}}
 +  {{ $discourse_forums_category := ($.Param "discourse_forums_category") -}}
 +
@@ -212,7 +212,7 @@ index 0e90cc9..d532117 100644
 +  {{ $issuesURL := printf "%s/new-topic?title=%s+Page&category=%s&body=Source: %s%s" $discourse_forums (urlquery $.Title ) $discourse_forums_category (urlquery $.Permalink) "%0A%0A" -}}
    {{ $newPageStub := resources.Get "stubs/new-page-template.md" -}}
    {{ $newPageQS := querify "value" $newPageStub.Content "filename" "change-me.md" | safeURL -}}
-   {{ $newPageURL := printf "%s/new/%s?%s"  $gh_repo $gh_repo_path $newPageQS -}}
+   {{ $newPageURL := printf "%s/new/%s?%s"  $gh_repo (path.Dir $gh_repo_path) $newPageQS -}}
 diff --git a/node_modules/docsy/layouts/shortcodes/alert.html b/node_modules/docsy/layouts/shortcodes/alert.html
 index 12804b7..300b58d 100644
 --- a/node_modules/docsy/layouts/shortcodes/alert.html

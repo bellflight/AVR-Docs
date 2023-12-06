@@ -1,5 +1,5 @@
 {
-    "image": "docker.io/library/node:18-bullseye",
+    "image": "docker.io/library/node:20-bullseye",
     "postCreateCommand": "npm install && npm install -g npm",
     "forwardPorts": [
         1313
