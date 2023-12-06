@@ -11,7 +11,7 @@ if __name__ == "__main__":
         ["git", "submodule", "update", "--init", "--recursive", docsy_dir]
     )
     subprocess.check_call(["git", "reset", "--hard"], cwd=docsy_dir)
-    subprocess.check_call(["git", "clean", "-f"], cwd=docsy_dir)
+    os.remove(os.path.join(docsy_dir, "assets", "scss", "_theme_colors.scss"))
     subprocess.check_call(
         [
             "git",
@@ -25,6 +25,7 @@ if __name__ == "__main__":
 
     # assume unchanged on patched files
     filenames = [
+        os.path.join("layouts", "partials", "head.html"),
         os.path.join("layouts", "partials", "head-css.html"),
         os.path.join("layouts", "partials", "page-meta-lastmod.html"),
         os.path.join("layouts", "partials", "page-meta-links.html"),
@@ -42,9 +43,15 @@ if __name__ == "__main__":
             cwd=docsy_dir,
         )
 
+    subprocess.check_call(["npm", "install"], cwd=docsy_dir)
+
     # ignore new file
-    with open(
-        os.path.join(THIS_DIR, ".git", "modules", "themes", "docsy", "info", "exclude"),
-        "w",
-    ) as fp:
-        fp.write("assets/scss/_theme_colors.scss\n")
+    if os.path.isdir(os.path.join(THIS_DIR, ".git")):
+        # make sure we are not a submodule
+        with open(
+            os.path.join(
+                THIS_DIR, ".git", "modules", "themes", "docsy", "info", "exclude"
+            ),
+            "w",
+        ) as fp:
+            fp.write("assets/scss/_theme_colors.scss\n")

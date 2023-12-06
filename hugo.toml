@@ -5,7 +5,7 @@ baseURL = "/"
 
 title           = "Bell AVR Documentation"
 enableRobotsTXT = true
-themesDir       = "node_modules"
+themesDir       = "themes"
 theme           = "docsy"
 
 # disable RSS feed

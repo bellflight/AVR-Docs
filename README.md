@@ -2,12 +2,10 @@
 
 ## Getting Started
 
-```bash
-git clone https://github.com/bellflight/AVR-Docs
-cd AVR-Docs
-npm install
-code .
-```
+**This repository only works on Linux and needs to be inside a DevContainer on Windows.**
+
+When using VS Code, accept the "Clone in Volume" Devcontainer prompt.
+For Windows users, this will significantly improve disk I/O.
 
 I recommend installing the recommended VSCode extensions, and enabling
 `editor.formatOnSave` for the workspace.
@@ -15,18 +13,8 @@ I recommend installing the recommended VSCode extensions, and enabling
 ## Tooling
 
 The generate the static site, we use the [Hugo](https://gohugo.io/) static site
-generator. The site is based on the [Docsy](https://docsy.dev) theme by Google. To
-install all the dependencies, you will need to have `nodejs` and `npm` installed. Check
-the [`.node-version`](.node-version) file to see what version of `node` is being used to
-build the site.
-
-Running
-
-```bash
-npm install
-```
-
-will install all of the required dependencies and tools.
+generator. The site is based on the [Docsy](https://docsy.dev) theme by Google.
+All the dependencies are automatically installed in the container.
 
 To preview the site, run:
 
